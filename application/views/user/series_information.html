@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link type="text/css" media="all" href="<?php echo $base_url;?>css/reset.css" rel="stylesheet"/>
+<link type="text/css" media="all" href="<?php echo $base_url;?>css/user/style.css" rel="stylesheet"/>
+<link media="screen" rel="stylesheet" href="<?php echo $base_url;?>css/user/colorbox.css" />
+<title><?php echo $title;?></title>
+<style type="text/css">
+.information {
+	width: 1024px;
+	min-height: 600px;
+	margin: auto;
+	border-color: silver #D9D9D9 #D9D9D9;
+	border-right: 1px solid #D9D9D9;
+	border-style: solid;
+	border-width: 1px;
+	line-height: 20px;
+	font-family: "微软雅黑";
+	position:relative;
+}
+
+.tab_info{
+	border: 1px solid #D9D9D9;
+}
+
+.tb_group{
+	background-color:#BACFC3;
+	border-bottom:1px solid #576e92;
+}
+
+.tb_chekuan{
+	background-color:#84A3B2;
+	border-left:1px solid #576e92;
+}
+
+.td_left{
+	width:100px;
+	background-color:#D9E0BC;
+	border-bottom:1px solid #576e92;
+}
+
+.td_value{
+	background-color:;
+	border-bottom:1px solid #576e92;
+	border-left:1px solid #CDD5E0;
+}
+</style>
+</head>
+<body>
+<?php $this->load->view('user/lib/page_header.html');?>
+
+<div class="information">
+<?php if($carCount==0){echo "该车系暂时无近两年车款参数信息，敬请期待！";}else{?>
+<table class="tab_info">
+<thead>
+<tr>
+<th ></th>
+<!-- 遍历车款 -->
+<?php foreach($attributes as $key_car=>$car){?>
+<th class="tb_chekuan">
+	<?php echo $car['goods_name'];?>
+</th>
+<?php }?>
+</tr>
+</thead>
+
+<tbody>
+<?php foreach($allattributes as $key=>$group){?>
+<tr>
+	<th class="tb_group" colspan="<?php echo $carCount+1;?>" style="text-align:left;" ><?php echo $group['group_name'];?></th>
+</tr>
+	<!-- 遍历参数属性 -->
+	<?php foreach($group['attribute'] as $key_attr=>$attr){?>
+	<tr onmouseover="changeBgcolor(this,1)" onmouseout="changeBgcolor(this,2)">
+		<td class="td_left"><?php echo $attr['attr_name'];?></td>
+		<!-- 遍历车款 -->
+		<?php foreach($attributes as $key_car=>$car){?>
+		<td class="td_value">
+			<?php if(@$car['information'][$attr['attr_id']]){?>
+				<?php echo $car['information'][$attr['attr_id']];?>
+			<?php }else{ echo "/";}?>
+		</td>
+		<?php }?>
+	</tr>
+	<?php }?>
+<?php }?>
+</tbody>
+</table>
+<?php }?>
+
+      
+
+
+</div>
+<?php $this->load->view('user/lib/page_foot.html');?>
+<script src="<?php echo $base_url;?>js/user/jquery.js" type="text/javascript"></script>
+<script src="<?php echo $this->config->item('base_url');?>js/user/jquery.colorbox-min.js" type="text/javascript"></script>  
+<script type="text/javascript">
+var BASE_URL="<?php echo $base_url;?>";
+/**  
+	*鼠标移到行上，此行背景变为粉红，鼠标移开，背景颜色消失  
+*/  
+	function changeBgcolor(tr,num){  
+		if(num==1){  
+				tr.style.backgroundColor = "#D9E0BC";   
+		}else if(num == 2){   
+			tr.style.backgroundColor = "";  
+		}   
+	} 
+
+	function getWindowHeight(){
+		return $(window).height();
+	}
+</script>
+<script src="<?php echo $this->config->item('base_url');?>js/user/common.js" type="text/javascript"></script>
+</body>
+</html>

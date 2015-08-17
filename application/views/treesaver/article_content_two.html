@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link type="text/css" media="all" href="<?php echo $base_url;?>css/reset.css" rel="stylesheet"/>
+<link type="text/css" media="all" href="<?php echo $base_url;?>css/user/style.css" rel="stylesheet"/>
+<link media="screen" rel="stylesheet" href="<?php echo $base_url;?>css/user/colorbox.css" />
+<title><?php echo $title;?></title>
+<style type="text/css">
+.con{
+	text-indent:0.9cm;
+}
+.tit{
+	text-align: center;
+	font-size:30px;
+	padding-top:10px;
+	padding-bottom:3px;
+
+}
+.subhead{
+	text-align: center;
+	font-size:20px;
+	padding-bottom:3px;
+}
+.pic{
+	padding-top:10px;
+	padding-bottom:10px;
+}
+</style>
+</head>
+
+<body>
+<?php $this->load->view('user/lib/page_header.html');?>
+<div class="wrap">
+<h1 class="tit"><?php echo $article['Title'];?></h1>
+<h2 class="tit"><?php echo $article['Summary'];?></h2>
+<h3 class="subhead">By <?php echo $article['FromWebSite'] . $article['Author'] . $article['ArticleDate'];?></h3>
+<?php foreach ($article['contents'] as $key => $content){ ?>
+	<?php if ($content['Type'] != 2){ ?>
+		<p class="con"> <?php echo $content['Content']; ?> </p>
+	<?php }elseif($content['Type'] == 2){ ?>
+		<img class="pic" align="middle" width="<?php echo $content['ImageWidth'];?>"; height="<?php echo $content['ImageHeight'];?>";
+			src="<?php echo  $base_url;?>images/<?php echo $content['LocalImageFileName'];?>"
+		/>
+	<?php }?>
+<?php }?>
+</div>
+<?php $this->load->view('user/lib/page_foot.html');?>
+
+<script src="<?php echo $base_url;?>js/user/jquery.js" type="text/javascript"></script>
+<script src="<?php echo $this->config->item('base_url');?>js/user/jquery.colorbox-min.js" type="text/javascript"></script>  
+<script type="text/javascript">
+window.moveTo(0,0); 
+window.resizeTo(window.screen.availWidth,window.screen.availHeight);
+var BASE_URL="<?php echo $base_url;?>";
+$(document).ready(function(){
+    $("#topbar_login").colorbox();
+});
+
+</script>
+<script src="<?php echo $this->config->item('base_url');?>js/user/common.js" type="text/javascript"></script>
+</body>
+</html>

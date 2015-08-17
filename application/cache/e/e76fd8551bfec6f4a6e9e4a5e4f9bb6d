@@ -1,0 +1,378 @@
+1319887327TS---><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" media="all" href="http://127.0.0.1/autoreader/css/reset.css" rel="stylesheet"/>
+<link type="text/css" media="all" href="http://127.0.0.1/autoreader/css/reader/style.css" rel="stylesheet"/>
+<link rel="icon" href="favic.ico" type="image/ico" />
+<title>途观——车型详解</title>
+<!--[if IE]>
+<style type="text/css">
+.img,#content,#maincontent,.img_content{behavior: url(http://127.0.0.1/autoreader/js/ie-css3.htc);}
+</style>
+<![endif]-->
+</style>
+</head>
+<body style="overflow:hidden;">
+<div  class="ih_overlay" id="ih_overlay" > </div>
+<div  class="ih_overlay" id="ih_overlay2" title="点击关闭"> </div>
+<div id=big_img_content > <img src="" alt="" id="big_img" /> </div>
+<!--显示文章列表-->
+<div class="content" id="content">
+  <div class="header"> </div>
+  <div class="maincontent" id="maincontent">
+    <div class="pages" id="pages">
+      <div id="page_loading" class="page" align="center" style="vertical-align:middle;"> <img src="http://127.0.0.1/autoreader/img/loading.gif" alt="" style="margin-top:20%;" /> </div>
+    </div>
+  </div>
+</div>
+<!--循环遍历文章数据，并模板化文章列表-->
+<div id="data">
+  <div id="data-bind-1" style="display:none;">
+        <div class="block"  id="b_54">
+      <div class="block_content" id="bc_54" >
+        <div class="img_content" id="ic_54"> <img 
+        onError="javascript:;this.width=0;this.height=0;"
+        class="img" id="img_54" title="汽车之家 车型详解 上海大众-途观 实测-加速时间" alt="汽车之家 车型详解 上海大众-途观 实测-加速时间"  
+                     src="http://127.0.0.1/autoreader/images/0/54_4745.jpg" 
+                     width="500" height="201"/> </div>
+        <!--end img_content-->
+        <div class="text_content" id="tc_54">
+          <h2 id="t_54"> <a target="_blank" href="http://127.0.0.1/autoreader/reader/articlecontent/54.html" > 汽车之家 车型详解 上海大众-途观 实测-加速时间 </a> </h2>
+          <h3>汽车之家 车型详解 上海大众-途观</h3>
+          <div class="text" id="t_54"> <p>●  加速测试</p><p>既然动力系统有了变化，我们就先来看看途观在加、减速测试项目上的表现如何。虽然比进口版本多了30马力的功率，但加速成绩只提升了0.2秒，从感官上是判断不出区别的。最主要的因素是车身加大造成的额外负担：其整备质量为1705千克，比进口版本多出了113公斤，也就是差不多相当于多坐了两个人。</p><p>曲线中可以看到途观的1挡升2挡的时间要比Tiguan晚了1秒钟左右，因为两台车扭矩峰值相同，爆发起点都在1700转开始，轮胎尺寸也相同（扁平比有差别），想要在负荷增大的情况下有所突破就要靠拉高转速产生更大功率来弥补，从这个角度说，S挡下6300转之后再升挡也是加强动力表现的策略之一，但对于增压发动机来说，我们并不推荐车主也经常给涡轮这么大的工作负荷。</p> </div>
+        </div>
+        <!--end text_content--> 
+      </div>
+      <!--end block_content--> 
+    </div>
+    <!--end block-->
+        <div class="block"  id="b_53">
+      <div class="block_content" id="bc_53" >
+        <div class="img_content" id="ic_53"> <img 
+        onError="javascript:;this.width=0;this.height=0;"
+        class="img" id="img_53" title="汽车之家 车型详解 上海大众-途观 养护-保养费用" alt="汽车之家 车型详解 上海大众-途观 养护-保养费用"  
+                     src="http://127.0.0.1/autoreader/images/" 
+                     width="0" height="0"/> </div>
+        <!--end img_content-->
+        <div class="text_content" id="tc_53">
+          <h2 id="t_53"> <a target="_blank" href="http://127.0.0.1/autoreader/reader/articlecontent/53.html" > 汽车之家 车型详解 上海大众-途观 养护-保养费用 </a> </h2>
+          <h3>汽车之家 车型详解 上海大众-途观</h3>
+          <div class="text" id="t_53"> <p>下面就来看看途观车型在4S店内的实际保养情况如何，我们随机选取了北京地区一家上海大众4S店进行保养调查，如以往一样先来了解店内对途观车型的保养周期/项目，由于北京地区用车环境复杂，所以保养周期会相应的做出一定的调整。</p><p>如众多品牌相同，上海大众对于途观车型的保养项目和周期都相应的进行调整，最为明显的就是保养周期由每1万公里缩短为每7500公里，首次保养为5000公里，免费进行机油机滤更换，第二次保养为10000公里时进行，之后保养周期为7500公里。我们计算出途观行驶55000公里所需的保养费用为8990.87元。</p><p>由于TSI发动机的技术含量较高，因此在配件的选择方面多以进口为主，尤其是关键配件，如机油滤清器、火花塞等等，这些配件的售价相比一般的国产配件要贵出两倍以上，但对于发动机的保护也是有保证的。</p><p>可以看出，虽然身为一款国产SUV，但途观的保养配件的价格仿佛依旧按照进口车型的标准收取，并且工时费的价格可以媲美一些级别更高的车型。就拿火花塞为例，125元一根的售价相当于国产自主品牌的车型更换火花塞两次的费用，不得不说途观的配件价格真的不便宜。</p> </div>
+        </div>
+        <!--end text_content--> 
+      </div>
+      <!--end block_content--> 
+    </div>
+    <!--end block-->
+        <div class="block"  id="b_52">
+      <div class="block_content" id="bc_52" >
+        <div class="img_content" id="ic_52"> <img 
+        onError="javascript:;this.width=0;this.height=0;"
+        class="img" id="img_52" title="汽车之家 车型详解 上海大众-途观 养护-保养周期" alt="汽车之家 车型详解 上海大众-途观 养护-保养周期"  
+                     src="http://127.0.0.1/autoreader/images/0/52_4720.jpg" 
+                     width="500" height="375"/> </div>
+        <!--end img_content-->
+        <div class="text_content" id="tc_52">
+          <h2 id="t_52"> <a target="_blank" href="http://127.0.0.1/autoreader/reader/articlecontent/52.html" > 汽车之家 车型详解 上海大众-途观 养护-保养周期 </a> </h2>
+          <h3>汽车之家 车型详解 上海大众-途观</h3>
+          <div class="text" id="t_52"> <p>由于1.8TSI车型与2.0TSI车型发动机及变速箱结构基本相同，所以两款发动机车型的保养项目和周期也是完全一样的，在保养手册上也明确注明了途观1.8TSI/2.0TSI车型保养手册。因此购买了2.0TSI车型的用户不用担心它的保养费用会比1.8TSI车型高。</p><p><b>≥点击小图可查看大图≤</b></p><p>手册上明确注明了，对于一些恶劣天气或者使用环境不理想的情况缩短可以保养周期，从而保证车辆运转正常。尽管如此，每1万公里的保养周期相比日系车型也要多出一倍，虽然国内多数城市还不能达到理想的用车环境，但既然如此规定就说明该车是完全可以经受更长周期的更换保养。</p><p>通过查看上海大众途观官方保养手册得知，如大众其他车型一样，厂家规定的保养周期为每1万公里，空气滤清器为每1万公里更换，汽油滤清器为55000公里时更换，空调滤清器的更换周期为每2万公里进行更换。变速箱油和刹车油在行驶至55000公里进行更换，火花塞需要每2万公里更换。主要是由于TSI发动机结果比较复杂，对于油品和配件的要求比较高，因此空气滤清器和火花塞的更换周期都非常短。</p> </div>
+        </div>
+        <!--end text_content--> 
+      </div>
+      <!--end block_content--> 
+    </div>
+    <!--end block-->
+        <div class="block"  id="b_51">
+      <div class="block_content" id="bc_51" >
+        <div class="img_content" id="ic_51"> <img 
+        onError="javascript:;this.width=0;this.height=0;"
+        class="img" id="img_51" title="汽车之家 车型详解 上海大众-途观 结构-车身尺寸" alt="汽车之家 车型详解 上海大众-途观 结构-车身尺寸"  
+                     src="http://127.0.0.1/autoreader/images/0/51_4717.jpg" 
+                     width="500" height="375"/> </div>
+        <!--end img_content-->
+        <div class="text_content" id="tc_51">
+          <h2 id="t_51"> <a target="_blank" href="http://127.0.0.1/autoreader/reader/articlecontent/51.html" > 汽车之家 车型详解 上海大众-途观 结构-车身尺寸 </a> </h2>
+          <h3>汽车之家 车型详解 上海大众-途观</h3>
+          <div class="text" id="t_51">  </div>
+        </div>
+        <!--end text_content--> 
+      </div>
+      <!--end block_content--> 
+    </div>
+    <!--end block-->
+        <div class="block"  id="b_50">
+      <div class="block_content" id="bc_50" >
+        <div class="img_content" id="ic_50"> <img 
+        onError="javascript:;this.width=0;this.height=0;"
+        class="img" id="img_50" title="汽车之家 车型详解 上海大众-途观 结构-车轮轮胎" alt="汽车之家 车型详解 上海大众-途观 结构-车轮轮胎"  
+                     src="http://127.0.0.1/autoreader/images/0/50_4708.jpg" 
+                     width="500" height="375"/> </div>
+        <!--end img_content-->
+        <div class="text_content" id="tc_50">
+          <h2 id="t_50"> <a target="_blank" href="http://127.0.0.1/autoreader/reader/articlecontent/50.html" > 汽车之家 车型详解 上海大众-途观 结构-车轮轮胎 </a> </h2>
+          <h3>汽车之家 车型详解 上海大众-途观</h3>
+          <div class="text" id="t_50"> <p>这次我们体验的是顶配版本的旗舰导航版途观，但其轮毂和轮胎尺寸依然不及进口的Tiguan，因此视觉效果上已经落了下风。而且轮胎的品牌也从普利司通换成了韩泰，好在轮胎宽度没有改变，不过性能方面的降低恐怕是不可避免的。</p><p>国产tiguan目前有三款轮毂，其中两款作为高配车型使用，尺寸达到了235 55 R17（低配为215 65 R16），我觉得挺实在的；同样实在的还有后视镜功能，据了解，目前所有的途观车型均标配了双区镜面以及电加热功能，虽说都不是什么大成本制作，但有就比没有好！</p><p>轮毂和轮胎往往是进口车和国产车区别最大的地方，国产途观的表现可以说是喜忧参半。可喜的部分是轮毂的造型和进口Tiguan的舒适版一样，轮胎尺寸也同为235/55R17。但遗憾的是轮胎的由原来的日本产普利司通变为了中国造韩泰。这点大概是很多大众车友们都不愿意看到的。但细想想，上海大众的绝大部分车型现在采用的都是韩泰轮胎，仅有朗逸和新领驭的部分特定车型上偶尔还能见到米其林或是邓禄普这些品牌。因此国产途观在轮胎上的缩水就不足为奇了。</p> </div>
+        </div>
+        <!--end text_content--> 
+      </div>
+      <!--end block_content--> 
+    </div>
+    <!--end block-->
+        <div class="block"  id="b_49">
+      <div class="block_content" id="bc_49" >
+        <div class="img_content" id="ic_49"> <img 
+        onError="javascript:;this.width=0;this.height=0;"
+        class="img" id="img_49" title="汽车之家 车型详解 上海大众-途观 结构-前后悬挂" alt="汽车之家 车型详解 上海大众-途观 结构-前后悬挂"  
+                     src="http://127.0.0.1/autoreader/images/0/49_4706.jpg" 
+                     width="500" height="264"/> </div>
+        <!--end img_content-->
+        <div class="text_content" id="tc_49">
+          <h2 id="t_49"> <a target="_blank" href="http://127.0.0.1/autoreader/reader/articlecontent/49.html" > 汽车之家 车型详解 上海大众-途观 结构-前后悬挂 </a> </h2>
+          <h3>汽车之家 车型详解 上海大众-途观</h3>
+          <div class="text" id="t_49"> <p><b>上海大众途观——城市化SUV</b></p><p>不太想用什么形容词去形容途观的销售情况了，说实话实在想不通它在哪方面可以如此吸引消费者，应该是平均发展的能力和准确的产品定位及成功的营销策略吧。</p><p>其实单纯从悬挂结构很难分出那个是途观那个是速腾，因为两款车使用了相同的悬挂，同样粗壮的下摆臂强度没有问题，但是城市化进程明显的结构并不能应付过于强大的冲击。</p> </div>
+        </div>
+        <!--end text_content--> 
+      </div>
+      <!--end block_content--> 
+    </div>
+    <!--end block-->
+        <div class="block"  id="b_48">
+      <div class="block_content" id="bc_48" >
+        <div class="img_content" id="ic_48"> <img 
+        onError="javascript:;this.width=0;this.height=0;"
+        class="img" id="img_48" title="汽车之家 车型详解 上海大众-途观 结构-动力系统" alt="汽车之家 车型详解 上海大众-途观 结构-动力系统"  
+                     src="http://127.0.0.1/autoreader/images/0/48_4699.jpg" 
+                     width="500" height="297"/> </div>
+        <!--end img_content-->
+        <div class="text_content" id="tc_48">
+          <h2 id="t_48"> <a target="_blank" href="http://127.0.0.1/autoreader/reader/articlecontent/48.html" > 汽车之家 车型详解 上海大众-途观 结构-动力系统 </a> </h2>
+          <h3>汽车之家 车型详解 上海大众-途观</h3>
+          <div class="text" id="t_48"> <p>●  动力匹配概况</p><p>先来看一下国产途观的动力匹配。我们测试的这款2.0TSI顶配车型搭载的大众集团非常著名的EA888发动机，也就是在迈腾、国产GTI上看到的那台。它的峰值扭矩率与进口Tiguan同为280N·m，而最大功率输出则要比后者多出30马力。</p><p>变速箱还是那台六速手自一体变速箱，之前我们已经在进口Tiguan身上见识过它的表现了。从实际行驶情况看，它的换挡时机掌握的比较恰当，虽然挡位切换比不上DSG产品的顺滑，但如果不是刻意注意的话，这种难以察觉的间隙是不容易被发现的。</p><p>途观1.8TSI的发动机相比大家也都比较熟悉了，速腾冠军版、迈腾、斯柯达明锐、昊锐等车型上都有装备。250牛顿米的最大扭矩和160马力的最大功率，拖动这台整备质量在1.6吨左右紧凑型SUV，还算轻松。至于相比2.0TSI车型，在动力上能有多大差别，您可以适当的参考一下迈腾或昊锐车型上1.8TSI与2.0TSI车型的动力差别。</p> </div>
+        </div>
+        <!--end text_content--> 
+      </div>
+      <!--end block_content--> 
+    </div>
+    <!--end block-->
+        <div class="block"  id="b_47">
+      <div class="block_content" id="bc_47" >
+        <div class="img_content" id="ic_47"> <img 
+        onError="javascript:;this.width=0;this.height=0;"
+        class="img" id="img_47" title="汽车之家 车型详解 上海大众-途观 内装-后备厢" alt="汽车之家 车型详解 上海大众-途观 内装-后备厢"  
+                     src="http://127.0.0.1/autoreader/images/" 
+                     width="0" height="0"/> </div>
+        <!--end img_content-->
+        <div class="text_content" id="tc_47">
+          <h2 id="t_47"> <a target="_blank" href="http://127.0.0.1/autoreader/reader/articlecontent/47.html" > 汽车之家 车型详解 上海大众-途观 内装-后备厢 </a> </h2>
+          <h3>汽车之家 车型详解 上海大众-途观</h3>
+          <div class="text" id="t_47"> <p>由于第二排座椅的灵活性较强，因此后备箱的空间变化也跟着沾了光，参数上，它可从标准的400L一直变化到1530L。有个细节挺讲究的，如果将座椅拉到最前端，那多出的部分就会与后备箱地板中间形成断层，为了掩盖这个“不美观”，同时又可以保证一个完整的空间，设计师特意在地板上加了两块4/6分折的隔板，轻轻一放，掩人耳目，还能达到效果。</p> </div>
+        </div>
+        <!--end text_content--> 
+      </div>
+      <!--end block_content--> 
+    </div>
+    <!--end block-->
+        <div class="block"  id="b_46">
+      <div class="block_content" id="bc_46" >
+        <div class="img_content" id="ic_46"> <img 
+        onError="javascript:;this.width=0;this.height=0;"
+        class="img" id="img_46" title="汽车之家 车型详解 上海大众-途观 内装-天窗尺寸" alt="汽车之家 车型详解 上海大众-途观 内装-天窗尺寸"  
+                     src="http://127.0.0.1/autoreader/images/0/46_4683.jpg" 
+                     width="500" height="375"/> </div>
+        <!--end img_content-->
+        <div class="text_content" id="tc_46">
+          <h2 id="t_46"> <a target="_blank" href="http://127.0.0.1/autoreader/reader/articlecontent/46.html" > 汽车之家 车型详解 上海大众-途观 内装-天窗尺寸 </a> </h2>
+          <h3>汽车之家 车型详解 上海大众-途观</h3>
+          <div class="text" id="t_46"> <p>● 途观 长117cm 宽70cm 面积0.819平方米        可打开59cm     面积0.413平方米</p><p>途观的天窗其实跟Q5非常接近，除了尺寸稍有一丁点的差别以外（长度和宽度略小一点点），但是不管怎么说，在价格低了很多的途观上面，能有和Q5几乎一样的全景天窗，同样遮阳帘也是电动方式打开，看上去还是很划算的。</p><p>途观的天窗和大众以往其他的电动天窗秉承一样的设计，一键式开启时，天窗并不能一直打开到底，这个时候打开的长度大概为46cm，再拧一下旋钮，天窗会继续向后打开，此时打开的长度为59cm，全部可打开的面积达到0.413平方米。此外，在打开方式中还有一种换气模式，跟前面说过的Q5一样，前天窗会翘起，形成一个开口，用来起到换气的作用，只是看起来比较窄而已。</p><p>大天窗真是个不错的设计！作为一款都市型SUV，tiguan能为此吸引不少追求浪漫或是家庭观念强的用户。一路上，我和同伴一直坚持打开遮阳帘去享受阳光和车内明亮的环境！说实话，我要是决定买tiguan，这个配置是绝对不能少的。只可惜美中不足……天窗内的遮阳帘是无法一键式的开/闭的，这反而更麻烦了，谁让它太“大”了呢？</p> </div>
+        </div>
+        <!--end text_content--> 
+      </div>
+      <!--end block_content--> 
+    </div>
+    <!--end block-->
+        <div class="block"  id="b_45">
+      <div class="block_content" id="bc_45" >
+        <div class="img_content" id="ic_45"> <img 
+        onError="javascript:;this.width=0;this.height=0;"
+        class="img" id="img_45" title="汽车之家 车型详解 上海大众-途观 内装-乘坐空间" alt="汽车之家 车型详解 上海大众-途观 内装-乘坐空间"  
+                     src="http://127.0.0.1/autoreader/images/" 
+                     width="0" height="0"/> </div>
+        <!--end img_content-->
+        <div class="text_content" id="tc_45">
+          <h2 id="t_45"> <a target="_blank" href="http://127.0.0.1/autoreader/reader/articlecontent/45.html" > 汽车之家 车型详解 上海大众-途观 内装-乘坐空间 </a> </h2>
+          <h3>汽车之家 车型详解 上海大众-途观</h3>
+          <div class="text" id="t_45"> <p>● 乘坐体验篇——后排可以媲美行政级中型车</p><p>途观旗舰导航版的座椅材质很显档次，是和高配昊锐相同的真皮与Alcantara相结合的材质制成的。不过座椅造型并没有太多亮点可言，乘坐感觉的确很舒适，但包裹性不足，无法给予驾驶者有力的侧向支撑。</p><p>一个有意思的设置是，途观前排两个座椅的椅背角度可调范围并不相同。副驾驶座椅椅背几乎可以完全放倒，而主驾驶的椅背只能放倒大约120°，不过这样也已经足够舒适了，用来让长途驾驶的驾驶者中途小憩是没有问题的。</p><p>一般来说，只有中型车以上级别的车型才有资格说坐在后排是一种享受，而途观现在也有这样的自信。在加长80mm之后，途观的后排空间大幅提高，此外后排椅背的角度还可以进行五段式调节，因此后排乘客可以享受到出色的乘坐舒展性和舒适性。</p><p>『进口Tiguan的小桌板（左）和扶手垫（右）都没有出现在途观上』</p><p>虽然途观的后排座椅周边配置已经较为齐全，但和进口Tiguan相比还是有些差距。如果说小桌板的实用性不算太高，那后排中央扶手上的真皮靠垫实在不应该精简掉，现在直接把手臂搭在硬塑材质上的感觉可不太舒服。</p> </div>
+        </div>
+        <!--end text_content--> 
+      </div>
+      <!--end block_content--> 
+    </div>
+    <!--end block-->
+        <div class="block"  id="b_44">
+      <div class="block_content" id="bc_44" >
+        <div class="img_content" id="ic_44"> <img 
+        onError="javascript:;this.width=0;this.height=0;"
+        class="img" id="img_44" title="汽车之家 车型详解 上海大众-途观 内装-中控方向盘" alt="汽车之家 车型详解 上海大众-途观 内装-中控方向盘"  
+                     src="http://127.0.0.1/autoreader/images/0/44_4634.jpg" 
+                     width="500" height="375"/> </div>
+        <!--end img_content-->
+        <div class="text_content" id="tc_44">
+          <h2 id="t_44"> <a target="_blank" href="http://127.0.0.1/autoreader/reader/articlecontent/44.html" > 汽车之家 车型详解 上海大众-途观 内装-中控方向盘 </a> </h2>
+          <h3>汽车之家 车型详解 上海大众-途观</h3>
+          <div class="text" id="t_44"> <p>● 前排中控台体验——空调出风口以多取胜</p><p>途观在国产后用和高尔夫6相同的方向盘取代了Tiguan上的五代车型的方向盘样式，同时中控台部分的空调控制区也有了相应的改变，面板和旋钮都是典型的六代风格，再配合上前脸的进化整体给人一种换代的错觉。</p><p>方向盘上的左右快捷键大多比较好理解，只有左下角的这个感人觉得有些奇怪。其图标看上去和中控台屏幕右上角的语音指令按键式相同的，但使用时才发现，方向盘上的这个按键只起到静音的作用，而不能像屏幕右上角的按键那样激动语音指令。</p><p>途观的中控台上有两样东西明显多于一般车型，首先是空调出风口，总共八个空调出风口是我们常见车型的两倍，不过这样设计的确有好处，乘客可以更加自主的控制风向，空调效果更加明显。而另一样比较多的是卡槽，中控台上共有六个。不过我们感觉似乎有些多余，毕竟开车时很少会同时用到这么多卡。</p><p>挡把前的储物槽很实用，刚好可以用来放置随身的小件物品。橡胶材质的内垫可以加大摩擦力，防止物品在行车过程中滑动。只是视觉和触觉上的档次感还有所欠缺，如果换成绒面材质相信会让人更有好感。</p><p>来到车内，我第一眼就看到了国产tiguan的不同，甚至说是改进！和进口版不一样的是方向盘从之前的“速腾造型”改变为“高尔夫6款”，这是大众的最新设计，看上去很不错，不管是从功能性、手感、还是审美角度，途观的这个选择都是明智的！与此同时，空调部分同样遵循了类似的路线，很想赞一下上海大众的决策。</p><p>目前，国产途观有全黑和双色两种内饰可供选择，通过观察，该车在做工和用料方面与进口版差别不大，我觉得基本可以打满分了！车门的上半部均为手感柔和的皮质或橡胶，下面储物槽的内部有绒面，最重要的是中控台顶部的材质很软，手感很好，另外，每个功能区、按键周围的缝隙也控制的相当出色。</p><p><b>中控台——退尽浮华 回归实用 方向盘令人失望</b></p><p>作为一款最低配置的车型，途观都会版的中控台整体风格、用料与配置能与旗舰版车型保持一致我们很高兴。至于方向盘，我们没有奢求国产大众能在它身上可以提供多功能按键。但在一款20万元左右的车型上至少真皮可以有，让驾驶者日常摸起来舒服一些。不过很可惜，大众一如既往的让我们失望了。不过仪表盘看着还是比较令人满意的，白色的字加红色的指针非常清晰，而且中间的大屏幕也被保留了下来，非常不错。</p><p>途观都会版的中控台及周边设计的表现留给我们的印象有喜有忧，可喜的地方是中控台的用料、做工都没有任何的缩水，且仪表盘中间的中文行车电脑显示屏还在，ESP、胎压检测等功能都在，杯架虽然没有了那个好看的“百叶帘”但实用性没有任何的影响，细节的处理很到位。要说不满，最大的就是方向盘，作为一款20万元左右级别的车型不提供真皮包裹实在有点说不过去。虽然单碟CD带有MP3功能，但与之相匹配的仅有4个扬声器，从数量上说对于这个级别的车型是少了点。要知道，丰田RAV4和本田CR-V最低配车型上的喇叭数量也都是6个。</p> </div>
+        </div>
+        <!--end text_content--> 
+      </div>
+      <!--end block_content--> 
+    </div>
+    <!--end block-->
+        <div class="block"  id="b_43">
+      <div class="block_content" id="bc_43" >
+        <div class="img_content" id="ic_43"> <img 
+        onError="javascript:;this.width=0;this.height=0;"
+        class="img" id="img_43" title="汽车之家 车型详解 上海大众-途观 四驱-四驱性能" alt="汽车之家 车型详解 上海大众-途观 四驱-四驱性能"  
+                     src="http://127.0.0.1/autoreader/images/0/43_4622.jpg" 
+                     width="500" height="375"/> </div>
+        <!--end img_content-->
+        <div class="text_content" id="tc_43">
+          <h2 id="t_43"> <a target="_blank" href="http://127.0.0.1/autoreader/reader/articlecontent/43.html" > 汽车之家 车型详解 上海大众-途观 四驱-四驱性能 </a> </h2>
+          <h3>汽车之家 车型详解 上海大众-途观</h3>
+          <div class="text" id="t_43"> <p>对途观四驱系统的性能测试共有两个项目，第一个是考察途观的中央多片离合器结构的差速装置对扭矩的前后分配能力如何，第二个则是大家已经很熟悉的交叉轴项目，考验途观的脱困性能。为了增加难度我们把两个项目都放到倾斜桥面上来进行。我们使用的倾斜桥面是暗藏玄机的，表面可以是正常的铺装钢板，也可以把前后轮位置替换成滚轮组来模拟轮胎打滑的状态。</p><p>1.前后桥扭矩分配能力测试</p><p>在这项测试中我们把两个前轮的位置替换成滚轮组，也就是说车辆一旦开到这里来，两个前轮就会同时失去抓地力，而此时后轮的附着力是正常的，如果途观的中央多片离合器式差速器能够将扭矩在前后桥间分配，那么车辆就能继续攀爬上桥。</p><p>测试中，途观在上行过程中前轮接触滚轮组开始打滑，但仅仅不到1秒的时间，中央多片离合差速器便把扭矩几乎全部分配给了后轮，几乎毫不费力的走了上去。可以说途观这套四驱系统的在扭矩前后桥分配方面的能力是非常强的，难能可贵的是系统的反应速度也非常之快。</p><p>2.交叉轴项目测试</p><p>交叉轴测试的内容就不用多介绍了，相信大家都很熟悉，只是这次难度加大，也是在倾斜桥面上进行，这对电子刹车辅助来说是不小的考验。测试中途观的左前轮和右后轮位置被替换成滚轮组，而右前轮和左后轮则是正常的路面。</p><p>结果途观没能通过这个项目，测试中电子刹车辅助仅仅是减慢了车轮打滑的转动速度，无法实现真正的制动，也就是说扭矩无法有效分配到有抓地力的车轮上去，动力全被打滑轮消耗掉，面对如此强度的测试只能败下阵来。</p><p>●  四驱系统性能测试视频</p><p>●  相关阅读:进口Tiguan越野能力测试</p> </div>
+        </div>
+        <!--end text_content--> 
+      </div>
+      <!--end block_content--> 
+    </div>
+    <!--end block-->
+        <div class="block"  id="b_42">
+      <div class="block_content" id="bc_42" >
+        <div class="img_content" id="ic_42"> <img 
+        onError="javascript:;this.width=0;this.height=0;"
+        class="img" id="img_42" title="汽车之家 车型详解 上海大众-途观 四驱-四驱结构" alt="汽车之家 车型详解 上海大众-途观 四驱-四驱结构"  
+                     src="http://127.0.0.1/autoreader/images/0/42_4618.jpg" 
+                     width="500" height="364"/> </div>
+        <!--end img_content-->
+        <div class="text_content" id="tc_42">
+          <h2 id="t_42"> <a target="_blank" href="http://127.0.0.1/autoreader/reader/articlecontent/42.html" > 汽车之家 车型详解 上海大众-途观 四驱-四驱结构 </a> </h2>
+          <h3>汽车之家 车型详解 上海大众-途观</h3>
+          <div class="text" id="t_42"> <p>●  四驱系统性能测试</p><p>看过进口Tiguan测试文章的朋友应该对它的四驱系统有了更深的了解，那么途观表现如何呢？由于两者使用的四驱系统完全一样，所以表现上也没有太大不同，不过在对途观的测试时，我们发现这套系统中央多片离合差速装置的前后扭矩分配能力还是挺强的。</p> </div>
+        </div>
+        <!--end text_content--> 
+      </div>
+      <!--end block_content--> 
+    </div>
+    <!--end block-->
+        <div class="block"  id="b_41">
+      <div class="block_content" id="bc_41" >
+        <div class="img_content" id="ic_41"> <img 
+        onError="javascript:;this.width=0;this.height=0;"
+        class="img" id="img_41" title="汽车之家 车型详解 上海大众-途观 实测-噪音" alt="汽车之家 车型详解 上海大众-途观 实测-噪音"  
+                     src="http://127.0.0.1/autoreader/images/" 
+                     width="0" height="0"/> </div>
+        <!--end img_content-->
+        <div class="text_content" id="tc_41">
+          <h2 id="t_41"> <a target="_blank" href="http://127.0.0.1/autoreader/reader/articlecontent/41.html" > 汽车之家 车型详解 上海大众-途观 实测-噪音 </a> </h2>
+          <h3>汽车之家 车型详解 上海大众-途观</h3>
+          <div class="text" id="t_41"> <p>●  噪音测试</p><p>噪音测试环节途观交上了让人满意的答卷，各个速度值下的噪音值都要低于进口Tiguan，尤其是怠速情况下48分贝已经跟不少高档轿车不相上下了。</p><p>大家可以在前面的静态体验部分可以看到，途观的做工用料比较讲究，一些细节部分的处理体现了厂家确实比较注重这款车，结果就是车舱内的隔音效果很好，同时发动机在低转速区间良好的状态也为降噪提供了有力的保障，相对而言120km/h时发动机声音有些大，因为此时涡轮增压器正在忘我的工作，好在听觉上并不对乘员产生影响。</p> </div>
+        </div>
+        <!--end text_content--> 
+      </div>
+      <!--end block_content--> 
+    </div>
+    <!--end block-->
+        <div class="block"  id="b_40">
+      <div class="block_content" id="bc_40" >
+        <div class="img_content" id="ic_40"> <img 
+        onError="javascript:;this.width=0;this.height=0;"
+        class="img" id="img_40" title="汽车之家 车型详解 上海大众-途观 实测-油耗" alt="汽车之家 车型详解 上海大众-途观 实测-油耗"  
+                     src="http://127.0.0.1/autoreader/images/0/40_4605.jpg" 
+                     width="500" height="554"/> </div>
+        <!--end img_content-->
+        <div class="text_content" id="tc_40">
+          <h2 id="t_40"> <a target="_blank" href="http://127.0.0.1/autoreader/reader/articlecontent/40.html" > 汽车之家 车型详解 上海大众-途观 实测-油耗 </a> </h2>
+          <h3>汽车之家 车型详解 上海大众-途观</h3>
+          <div class="text" id="t_40"> <p>●  油耗测试</p><p>首先需要说明的是图中大家看到有两张油表的图，一张29.85升，一张1.66升。那是因为第一次加到跳枪以后，油站的同志以迅雷不及掩耳之势拔了油枪并收了回去，所以不得不加了第二次油。</p><p>测试的两天正赶上北京突然升温的时候，所以一路上空调使用的比较频繁，不过拥堵路段的情况只占少数，大部分时候还是比较通畅的，所以11.1升/百公里的油耗不能算低，尤其跟日韩系SUV比起来没什么优势。还是得把责任归咎到车身尺寸上，多出来的这113公斤确确实实是发动机的负担，要宽敞还要省油，恐怕比较难。</p> </div>
+        </div>
+        <!--end text_content--> 
+      </div>
+      <!--end block_content--> 
+    </div>
+    <!--end block-->
+        <div class="block"  id="b_39">
+      <div class="block_content" id="bc_39" >
+        <div class="img_content" id="ic_39"> <img 
+        onError="javascript:;this.width=0;this.height=0;"
+        class="img" id="img_39" title="汽车之家 车型详解 上海大众-途观 实测-刹车距离" alt="汽车之家 车型详解 上海大众-途观 实测-刹车距离"  
+                     src="http://127.0.0.1/autoreader/images/" 
+                     width="0" height="0"/> </div>
+        <!--end img_content-->
+        <div class="text_content" id="tc_39">
+          <h2 id="t_39"> <a target="_blank" href="http://127.0.0.1/autoreader/reader/articlecontent/39.html" > 汽车之家 车型详解 上海大众-途观 实测-刹车距离 </a> </h2>
+          <h3>汽车之家 车型详解 上海大众-途观</h3>
+          <div class="text" id="t_39"> <p>●  刹车测试</p><p>途观的刹车距离比Tiguan长了2.7米，主要来自三方面原因，首先自然是因为体重增加了不少；其次制动系统虽然发挥很稳定，但是刹车力度要略低于Tiguan；最后轮胎由普利司通降级为韩泰，抓地力也受到一定影响。</p><p>最终成绩为42.2米，看来加长加大确实是要付出代价的。不过刹车测试中途观的制动系统表现出了较强的稳定性，几次测试成绩都在42米附近小幅度波动，没有出现明显的热衰减现象。</p> </div>
+        </div>
+        <!--end text_content--> 
+      </div>
+      <!--end block_content--> 
+    </div>
+    <!--end block-->
+        <!--end foreach articles--> 
+  </div>
+  <!--end data-bind --> 
+  <!---数据信息（id—weight）-->
+  <div id="data-info-1"  style="display:none;">
+        54-111,        53-56,        52-117,        51-70,        50-78,        49-167,        48-137,        47-35,        46-85,        45-41,        44-63,        43-165,        42-131,        41-59,        40-83,        39-52      </div>
+</div>
+<!--分页后的数据信息（tid-[aid/N]）-->
+<div id="page-info" style="display:none;"> </div>
+<!--菜单-->
+<div class="controll" id="controll">
+  <div class="bottom left"> </div>
+  <div class="bottom right">
+    <button class="next" id="next"> <img alt="&gt;" src="http://127.0.0.1/autoreader/img/next.png"> </button>
+    <button class="prev" id="prev" > <img alt="&lt;" src="http://127.0.0.1/autoreader/img/prev.png"> </button>
+    <div class="numbering"> 
+    已加载<span  id="loaded-num" >16</span>/共计<span>16</span>篇文章
+       <span id="pagenumber" class="pagenumber">1</span>/ <span data-bind="pagecount" id="pagecount" class="pagecount">1</span>页
+        
+    </div>
+  </div>
+</div>
+<!--文章列表-->
+<div class="sidebar" id="article_list"> </div>
+<button class="open-sidebar" id="list">目录</button>
+<button class="close-sidebar" id="list-close">关闭</button>
+<!--引入js--> 
+<script src="http://127.0.0.1/autoreader/js/user/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+var tempJson=[{"ti":"23","ba":"6","pinfo":"23,6,8,6,0,0,3,2,0,2,3,6,3,0,5,3,3,3,5,6,5,0,8,3,5,3,8,6"},{"ti":"20","ba":"6","pinfo":"20,6,8,2,0,0,3,1,0,1,3,2,3,0,5,1,3,1,5,2,5,0,8,1,5,1,8,2"},{"ti":"6","ba":"6","pinfo":"6,4,2,3,0,0,1,3,1,0,2,1,1,1,2,2,1,2,2,3"},{"ti":"16","ba":"5","pinfo":"16,5,8,6,0,0,3,6,3,0,6,3,3,3,6,6,6,0,8,4,6,4,8,6"},{"ti":"14","ba":"5","pinfo":"14,5,8,3,0,0,5,1,0,1,5,3,5,0,8,1,5,1,8,2,5,2,8,3"},{"ti":"15","ba":"5","pinfo":"15,5,4,3,0,0,2,1,0,1,2,3,2,0,4,2,2,2,3,3,3,2,4,3"},{"ti":"17","ba":"5","pinfo":"17,5,4,2,0,0,2,2,2,0,3,1,2,1,3,2,3,0,4,1,3,1,4,2"},{"ti":"18","ba":"5","pinfo":"18,5,4,3,0,0,2,3,2,0,3,1,3,0,4,1,2,1,4,2,2,2,4,3"},{"ti":"19","ba":"5","pinfo":"19,5,8,6,0,0,3,2,3,0,5,2,0,2,5,6,5,0,8,3,5,3,8,6"},{"ti":"26","ba":"5","pinfo":"26,5,8,2,0,0,2,1,2,0,5,1,0,1,3,2,3,1,5,2,5,0,8,2"},{"ti":"24","ba":"5","pinfo":"24,5,8,2,0,0,3,2,3,0,5,1,3,1,5,2,5,0,8,1,5,1,8,2"},{"ti":"13","ba":"5","pinfo":"13,5,8,3,0,0,3,1,0,1,3,3,3,0,5,2,3,2,5,3,5,0,8,3"},{"ti":"25","ba":"5","pinfo":"25,5,6,2,0,0,3,1,3,0,6,1,0,1,2,2,2,1,4,2,4,1,6,2"},{"ti":"21","ba":"4","pinfo":"21,4,8,2,0,0,5,1,5,0,8,1,0,1,4,2,4,1,8,2"},{"ti":"5","ba":"4","pinfo":"5,4,4,3,0,0,3,3,3,0,4,1,3,1,4,2,3,2,4,3"},{"ti":"7","ba":"4","pinfo":"7,4,4,2,0,0,2,2,2,0,4,1,2,1,3,2,3,1,4,2"},{"ti":"8","ba":"4","pinfo":"8,4,8,3,0,0,5,3,5,0,8,1,5,1,8,2,5,2,8,3"},{"ti":"9","ba":"4","pinfo":"9,4,8,2,0,0,3,2,3,0,5,1,3,1,5,2,5,0,8,2"},{"ti":"10","ba":"4","pinfo":"10,4,4,2,0,0,1,1,1,0,4,1,0,1,2,2,2,1,4,2"},{"ti":"11","ba":"4","pinfo":"11,4,4,2,0,0,1,1,1,0,4,1,0,1,3,2,3,1,4,2"},{"ti":"12","ba":"4","pinfo":"12,4,8,3,0,0,3,1,3,0,5,1,0,1,5,3,5,0,8,3"},{"ti":"27","ba":"3","pinfo":"27,3,8,3,0,0,5,3,5,0,8,2,5,2,8,3"},{"ti":"28","ba":"3","pinfo":"28,3,8,3,0,0,5,3,5,0,8,1,5,1,8,3"},{"ti":"29","ba":"3","pinfo":"29,3,8,3,0,0,5,2,0,2,5,3,5,0,8,3"},{"ti":"30","ba":"3","pinfo":"30,3,8,2,0,0,5,1,0,1,5,2,5,0,8,2"},{"ti":"22","ba":"3","pinfo":"22,3,8,2,0,0,3,2,3,0,8,1,3,1,8,2"},{"ti":"31","ba":"3","pinfo":"31,3,3,1,0,0,1,1,1,0,2,1,2,0,3,1"},{"ti":"4","ba":"3","pinfo":"4,3,2,2,0,0,1,2,1,0,2,1,1,1,2,2"},{"ti":"3","ba":"3","pinfo":"3,3,8,3,0,0,5,1,0,1,5,3,5,0,8,3"},{"ti":"2","ba":"2","pinfo":"2,2,2,1,0,0,1,1,1,0,2,1"},{"ti":"1","ba":"1","pinfo":"1,1,1,1,0,0,1,1"}];/*json格式模版信息*/
+var VALVE_WEIGHT=600;/*单页文章阀值*/
+</script> 
+<script src="http://127.0.0.1/autoreader/js/user/jigsaw.js" type="text/javascript"></script> 
+<script type="text/javascript">
+var windowSize= new Object();
+var BASE_URL="http://127.0.0.1/autoreader/";
+var SID=648;
+var CT=3;
+windowSize.width=$(window).width();
+windowSize.height=$(window).height();
+$("body").css({width:$(window).width(),height:$(window).height()})
+pageLength=saw(tempJson,windowSize,"data-bind-1","data-info-1");
+$("#pagecount").html(pageLength);
+$(window).bind('resize',
+	  function(){
+	  }
+);
+</script> 
+<script type="text/javascript">
+if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))|| (navigator.userAgent.match(/Android/i))){
+	 //$("#controll").hide();
+	 $.get("http://127.0.0.1/autoreader/js/user/reader.mobile.js");
+}else{
+	 $.get("http://127.0.0.1/autoreader/js/user/reader.js");
+}
+</script> 
+<!--edit by julian 2011/09/23 -->
+</body>
+</html>

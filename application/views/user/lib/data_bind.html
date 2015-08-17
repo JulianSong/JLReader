@@ -1,0 +1,43 @@
+<!--获得跟多文章-->  
+  <div id="data-bind-<?php echo $batch;?>" style="display:none;">
+   <?php foreach($list as $key=>$value){?>
+    <div class="block"  id="b_<?php echo $value['ArticleID'];?>">
+      <div class="block_content" id="bc_<?php echo $value['ArticleID'];?>" >
+        <div class="img_content" id="ic_<?php echo $value['ArticleID'];?>"> <img class="img" id="img_<?php echo $value['ArticleID'];?>" title="<?php echo $value['Title'];?>" alt="<?php echo $value['Title'];?>"  
+                     data-src="<?php echo $this->config->item('base_url');?>images/<?php echo $value['img']['LocalImageFileName'] ;?>" 
+                     width="<?php echo $value['img']['ImageWidth'];?>" height="<?php echo $value['img']['ImageHeight'];?>"/> </div>
+        <!--end img_content-->
+        <div class="text_content" id="tc_<?php echo $value['ArticleID'];?>">
+                    <h2 id="t_<?php echo $value['ArticleID'];?>"> 
+          <a target="_blank" id="ta_<?php echo $value['ArticleID'];?>" title="点击星标收藏,过会儿再看！" href="<?php echo $this->config->item('base_url');?>reader/articlecontent/<?php echo              $value['ArticleID'];?>.html" > 
+             <?php echo $value['Title'] ;?> 
+          </a> 
+           <img isadd="0" id="ti_<?php echo $value['ArticleID'];?>" class="favorite_icon"  title="点击星标收藏,过会儿再看！"  onclick="setFavorite(<?php echo $value['ArticleID'];?>,this)"src="<?php echo $this->config->item('base_url');?>img/favorite_gray.png" >
+          </h2>
+          <h3><span class="compete_series">相关车系：<?php foreach($value['competeSeries'] as $key=>$val){
+                        echo $val['cat_name'];
+                        if(($key+1)!=$value['csLength']) echo "，";
+                      }?>
+               </span>
+              <br /> 
+              发表时间：<?php echo $value['ArticleDate'];?>\<?php echo $value['weight'];?>
+          </h3>
+          <div class="text" id="td_<?php echo $value['ArticleID'];?>"> <?php echo $value['Summary'];?> </div>
+        </div>
+        <!--end text_content--> 
+      </div>
+      <!--end block_content--> 
+    </div>
+    <!--end block-->
+    <?php }?>
+    <!--end foreach articles--> 
+  </div>
+  <!--end data-bind --> 
+  <!---data-info(id—weight)-->
+  <div id="data-info-<?php echo $batch;?>"  style="display:none;">
+    <?php $i=0; foreach($list as $key=>$value){$i++;?>
+    <?php echo $value['ArticleID'];?>-<?php echo $value['weight'];if($i!=count($list)){echo ",";} ?>
+    <?php }?>
+  </div>
+   <!--end-data-info-->
+   <input type="hidden" id="load-data-num-<?php echo $batch;?>" value="<?php echo $loadDataNum;?>" />

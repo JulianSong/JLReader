@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css">
+.editpage {
+    font-size:15px;
+}
+#title{
+	font-size:18px;
+}
+.mycheckbox{
+	font-weight：900;
+	font-size:18px;
+}
+body{
+	background:#dfe3f6;
+}
+</style>
+<body>
+<div class="editpage">
+<span>id:<?php echo $ArticleID;?></span>
+Title:<span id="title"><?php echo $Title;?></span>
+<span class="mycheckbox"><input type="checkbox" value="1" name="del" id="del" onchange="editreview(<?php echo $ArticleID;?>,this.value,this.checked);">删除</span>
+<span class="mycheckbox"><input type="checkbox" value="2" name="picture" id="picture" onchange="editreview(<?php echo $ArticleID;?>,this.value,this.checked);">缺图</span>
+<span class="mycheckbox"><input type="checkbox" value="3" name="recommend" id="recommend" onchange="editreview(<?php echo $ArticleID;?>,this.value,this.checked);">推荐</span>
+<span class="mycheckbox"><input type="checkbox" value="4" name="edit" id="edit" onchange="editreview(<?php echo $ArticleID;?>,this.value,this.checked);">需修改</span>
+</div>
+<script src="<?php echo $base_url;?>js/user/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+var BASE_URL="<?php echo $base_url;?>";
+var DEL="<?php echo $del;?>";
+var PICTURE="<?php echo $picture;?>";
+var RECOMMEND="<?php echo $recommend;?>";
+var EDIT="<?php echo $edit;?>";
+/**
+ * 编辑状态
+ *	type:1删除，2缺图，3推荐，4需修改
+ *	action：1添加，0删除
+ */
+function editreview(ArticleID,type,checked){
+	$.post(BASE_URL + "admin/reviewarticle/editarticle", {
+		ArticleID 	:	ArticleID,
+		type		:	type,
+		action		:	checked?1:0
+	}, function(result) {
+		
+	}, 'text');
+}
+
+function showtype(){
+	document.getElementById("del").checked=false;
+	document.getElementById("picture").checked=false;
+	document.getElementById("recommend").checked=false;
+	document.getElementById("edit").checked=false;
+	if(DEL)
+		document.getElementById("del").checked=true;
+	if(PICTURE)
+		document.getElementById("picture").checked=true;
+	if(RECOMMEND)
+		document.getElementById("recommend").checked=true;
+	if(EDIT)
+		document.getElementById("edit").checked=true;
+}
+
+showtype();
+</script>
+</body>
+</html>

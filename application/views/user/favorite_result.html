@@ -1,0 +1,28 @@
+
+<?php if($favorite_count==0){?>
+<div class="favorite_point"><?php echo $favorite_point;?></div>
+<?php }?>
+<div class="favorite_main">
+	<div class="favorite_pages" id="favorite_pages">
+		<?php $favorite_pl=0 ;?>
+		<?php foreach($favorite as $key=>$val){?>
+			<?php if(fmod($key+1,$favorite_page_num)==1){?>
+			  <div class="favorite_page" id="favorite_page">
+			<?php }?>
+				<div class="favorite_line" id="favorite_line<?php echo $val['ArticleID'];?>">
+					<div class="favorite_title"><a  target="_blank"href="<?php echo $base_url;?>reader/articlecontent/<?php echo $val['ArticleID'];?>.html"><?php echo $val['Title'];?></a></div>
+					<div class="favorite_time"><?php echo $val['add_time'];?></div>
+					<div class="favorite_del">
+					<img src="<?php echo $base_url;?>img/icon/x_alt_16x16.png" style="cursor:pointer;" alt="点击删除" title="点击删除" onclick="delFavorite(<?php echo $val['ArticleID'];?>);");/>
+					</div>
+				</div>
+			<?php if(fmod($key+1,$favorite_page_num)==0||$key+1==$favorite_count){?>
+				<?php $favorite_pl++ ;?>
+				</div>
+			<?php }?>
+		<?php }?>
+	</div>
+</div>
+
+
+<div  id="favorite_new_pl" style="display:none"><?php echo $favorite_pl;?></div>

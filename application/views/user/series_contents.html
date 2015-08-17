@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link type="text/css" media="all" href="<?php echo $base_url;?>css/reset.css" rel="stylesheet"/>
+<link type="text/css" media="all" href="<?php echo $base_url;?>css/user/style.css" rel="stylesheet"/>
+<link media="screen" rel="stylesheet" href="<?php echo $base_url;?>css/user/colorbox.css" />
+<title><?php echo $title;?></title>
+<!--[if IE]>
+<style type="text/css">
+.channel,.c_an{behavior: url(<?php echo $this->config->item('base_url');?>js/ie-css3.htc);}
+.cs_a{behavior: url(<?php echo $this->config->item('base_url');?>js/ie-css3.htc);}
+</style>
+</style>
+<![endif]-->
+</head>
+<body>
+<?php $this->load->view('user/lib/page_header.html');?>
+<div  class="wrap">
+  <div class="left series_info">
+    <div class="series_base_info">
+      <p class="series_box big" style="float: none;"> <img class="opt_series" opt="<?php echo $seriesInfo['is_concerned'];?>"  onclick="operate(<?php echo $seriesInfo['cat_id'];?>,'<?php echo $seriesInfo['cat_name'];?>',this)"
+        src="<?php echo $base_url;?>img/icon/<?php echo $seriesInfo['is_concerned'];?>_p.png" /> <img class="spi"  width="151px" height="113px" src="<?php echo $base_url;?>images/series_img/<?php echo $seriesInfo['series_img'];?>"></img> <?php echo $seriesInfo['cat_name'];?> </p>
+      <div> <strong class="price">价格区间：<?php echo $seriesInfo['price_zone_min'];?>-<?php echo $seriesInfo['price_zone_max'];?>万元</strong><br>
+        <div   class="series_cars">
+          <h4 class="sub_series"  style="text-align:center;">车系相关车款参数</h4>
+          <?php foreach($cars as $row){?>
+          <p class="sub_series"><?php echo $row['cat_name'] ?>上市车款<img src="<?php echo $base_url;?>img/plus_16x16.png" height="16px" onClick="showCars(<?php echo $row['cat_id'] ?>,this)" open="0"></img></p>
+          <div class="cars" id="series_cars_<?php echo $row['cat_id'] ?>">
+            <?php foreach($row['cars'] as $car){?>
+            <p class="car" id="car_<?php echo $car['goods_id'];?>" > <a href="#" onClick="carAttributes(<?php echo $car['goods_id'];?>)"><?php echo $car['goods_name'] ;?></a></p>
+            <?php }?>
+          </div>
+          <?php }?>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--end left-->
+  <div class="right series_conent">
+    <div id="car_attr"> </div>
+    <div id="series_conent">
+      <div class="article_index">
+        <h4>文章筛选</h4>
+        <div style="margin:10px;">
+         <div class="channels">
+          <table width="100%" style="margin-bottom:10px;">
+            <thead>
+              <tr>
+                <?php foreach($channels as  $key=>$channel){
+                
+              ?>
+                <th><a  class="channel" href="<?php echo $base_url;?>reader/articles/<?php echo $seriesInfo['cat_id'];?>/<?php echo $channel['id'];?>.html"> <?php echo $channel['name'];?> <span class="c_an"><?php echo $channel['numb'];?></span> </a> </th>
+                <?php }?>
+              </tr>
+            </thead>
+          </table>
+          </div>
+                 <a class="cs_a"  href="javascript:articles();">
+                   选择竞争车系，查看对比文章
+                   <span class="c_an" id="san">0</span>
+                  </a>
+          <form target="_self" method="post"    action="<?php echo $base_url;?>reader/qarticles" id="qarticles">
+          <input type="hidden"/ name="sid" value="<?php echo $seriesInfo['cat_id'];?>">
+          <table width="100%" id="cs_content">
+            <thead>
+               <tr>
+                <?php foreach($competeSeries as  $key=>$cs){?>
+                <td  align="left"  style=" text-align:left"> 
+                 <a href="javascript:;">
+                  <label for="cs_<?php echo $cs['cat_id'];?>"  style="display:block;" >
+                     <input class="<?php echo $cs['ArticleID'];?>" onClick="isSel(this);getAn();"  type="checkbox" value="<?php echo $cs['cat_id'];?>" id="cs_<?php echo $cs['cat_id'];?>" name="csids[]"/>
+                    <?php echo $cs['cat_name'];?> 
+                  </label>
+                  </a> 
+                </td>
+                <?php if(fmod($key+1,6)==0){?>
+                </tr>
+                <tr>
+                <?php }?>
+                <?php if((fmod($csLength,6)!=0)&&($csLength==($key+1))&&$csLength>6){?>
+                    <?php for($i=0;$i<(6-fmod($csLength,6));$i++){?>
+                         <td ><a>&nbsp;</a></td>
+                    <?php }?>
+                </tr>
+                <?php }?>
+              <?php }?>  
+                <tr>
+                 <td colspan="6">
+                  共计<?php echo $csLength;?>个
+                </td>
+                </tr>            
+            </thead>
+          </table>
+          </thead>
+        </div>
+      </div>
+      <div class="series_comments">
+        <h4>用户评价</h4>
+        <div class="comments" id="comments">
+          <?php foreach($seriesComments as $comment){?>
+          <div class="comment">
+            <p class="comment_title"> <?php echo $comment['title'] ;?>——<a target="_blank" href="<?php echo $comment['URL'] ;?>"><?php echo $comment['Author'] ;?></a> </p>
+            <p class="comment_conment" onMouseOver="interval(1)" onMouseOut="interval(0)"> <?php echo $comment['content'] ;?> </p>
+          </div>
+          <?php }?>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+<?php $this->load->view('user/lib/page_foot.html');?>
+</body>
+<script type="text/javascript">
+var channel_length=<?php echo count($channels);?> ; 
+var BASE_URL="<?php echo $base_url;?>";
+var SID=<?php echo $seriesInfo['cat_id'];?>;
+if(channel_length==0){
+	if(window.confirm("谢谢您的关注，系统暂无该车系的数据，稍后我们会补全，请您持续关注。")){
+		 if(window.history.length==1)
+		 document.location=BASE_URL;
+		 else
+		 window.history.go(-1);
+	}
+}
+
+var CHANG_ICON=true;
+</script>
+<script src="<?php echo $base_url;?>js/user/jquery.js" type="text/javascript"></script>
+<script src="<?php echo $base_url;?>js/user/jquery.slip.js" type="text/javascript"></script> 
+<script src="<?php echo $base_url;?>js/user/jquery.colorbox-min.js" type="text/javascript"></script>
+<script src="<?php echo $base_url;?>js/user/common.js" type="text/javascript"></script>
+<script src="<?php echo $base_url;?>js/user/series.concerned.js" type="text/javascript"></script>
+<script src="<?php echo $this->config->item('base_url');?>js/user/jquery.colorbox-min.js" type="text/javascript"></script>
+<script type="text/javascript">
+function showCars(sid,opt){
+	if(opt.getAttribute("open")==1){
+		$("#series_cars_"+sid).hide();
+		opt.setAttribute("open",0);
+		opt.src=BASE_URL+"img/plus_16x16.png";
+	}else{
+		$("#series_cars_"+sid).show();
+		opt.src=BASE_URL+"img/minus_16x16.png";
+		opt.setAttribute("open",1);
+	}
+}
+/**
+ * 获得选中的checkbox的值
+ * @param content checkbox的父容器
+ * @return
+ */
+function getCheckboxsValue(content){
+	var content=document.getElementById(content);
+	var snArray = new Array();
+	var eles = content.getElementsByTagName("input");
+	for (var i=0; i<eles.length; i++) {
+		if (eles[i].tagName == 'INPUT' && eles[i].type == 'checkbox' && eles[i].checked && eles[i].value != 0) {
+			snArray.push(eles[i].value);
+		}
+	}
+	if (snArray.length == 0) {
+		return false;
+	} else {
+		return snArray.join(",");
+	}
+}
+/**
+ * 获得搜索的文章选中文章数量
+ */
+function getAn(){
+	var v=getCheckboxsValue("cs_content");
+	if(!v){
+	    $("#san").html(0);
+		return false;
+	}
+	$.post(
+	    BASE_URL+"series/getsan",
+		{
+		   sid:SID,
+		   csids:v
+		},
+		function(numb){
+			$("#san").html(numb);
+		},
+		'text'
+	)
+}
+function isSel(obj){
+	var classN=obj.className;
+	
+	if(obj.checked){
+		$("."+classN).parent().parent().css("color","#2E52A4");
+		obj.parentNode.parentNode.className="sis_sel"
+	}else{var v=getCheckboxsValue("cs_content");
+	     $("."+classN).parent().parent().css("color","#222222");
+	    obj.parentNode.parentNode.className="";
+	}
+}
+function articles(){
+	var v=getCheckboxsValue("cs_content");
+	if(v){
+		document.getElementById("qarticles").submit();
+	}else{
+		alert("请先选择车系！");
+	}
+}
+var r=0;
+var l=$("#comments").outerHeight(true);
+var top=true;
+function showComments(){
+    if(top){
+		r+=170;
+		if(r>l){
+			top=false;
+			return ;
+		}
+	    $("#comments").animate( {
+			top : "-=" + 170
+		}, 300);
+	}else{
+		r-=170;
+		if(r<0){
+			top=true;
+			return ;
+		}
+		$("#comments").animate( {
+			top : "+=" + 170
+		}, 300);
+	}
+}
+var interval_int=setInterval('showComments()',3600);
+function interval(stop_){
+	if(stop_)
+	clearInterval(interval_int);
+	else
+	interval_int=setInterval('showComments()',3600);
+}
+
+</script>
+</html>

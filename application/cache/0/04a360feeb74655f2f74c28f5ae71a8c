@@ -1,0 +1,180 @@
+1319887353TS---><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" media="all" href="http://127.0.0.1/autoreader/css/reset.css" rel="stylesheet"/>
+<link type="text/css" media="all" href="http://127.0.0.1/autoreader/css/reader/style.css" rel="stylesheet"/>
+<link rel="icon" href="favic.ico" type="image/ico" />
+<title>本田雅阁——用车养车（保养）</title>
+<!--[if IE]>
+<style type="text/css">
+.img,#content,#maincontent,.img_content{behavior: url(http://127.0.0.1/autoreader/js/ie-css3.htc);}
+</style>
+<![endif]-->
+</style>
+</head>
+<body style="overflow:hidden;">
+<div  class="ih_overlay" id="ih_overlay" > </div>
+<div  class="ih_overlay" id="ih_overlay2" title="点击关闭"> </div>
+<div id=big_img_content > <img src="" alt="" id="big_img" /> </div>
+<!--显示文章列表-->
+<div class="content" id="content">
+  <div class="header"> </div>
+  <div class="maincontent" id="maincontent">
+    <div class="pages" id="pages">
+      <div id="page_loading" class="page" align="center" style="vertical-align:middle;"> <img src="http://127.0.0.1/autoreader/img/loading.gif" alt="" style="margin-top:20%;" /> </div>
+    </div>
+  </div>
+</div>
+<!--循环遍历文章数据，并模板化文章列表-->
+<div id="data">
+  <div id="data-bind-1" style="display:none;">
+        <div class="block"  id="b_119">
+      <div class="block_content" id="bc_119" >
+        <div class="img_content" id="ic_119"> <img 
+        onError="javascript:;this.width=0;this.height=0;"
+        class="img" id="img_119" title="背后的秘密!原厂润滑油供应商之日韩篇" alt="背后的秘密!原厂润滑油供应商之日韩篇"  
+                     src="http://127.0.0.1/autoreader/images/0/119_9144.jpg" 
+                     width="500" height="235"/> </div>
+        <!--end img_content-->
+        <div class="text_content" id="tc_119">
+          <h2 id="t_119"> <a target="_blank" href="http://127.0.0.1/autoreader/reader/articlecontent/119.html" > 背后的秘密!原厂润滑油供应商之日韩篇 </a> </h2>
+          <h3>汽车之家 用车养车 广汽本田-雅阁</h3>
+          <div class="text" id="t_119"> <p>[汽车之家 疑难解答] 对汽车保养稍微了解的朋友一定会知道车辆每次保养都离不开的就是发动机润滑油，不过这个领域上可生产销售的润滑油厂家就这么几个，那各大汽车品牌在其4S店中指定使用的原厂机油到底是由哪家润滑油生产厂家代工生产的呢？从本周开始我们将为您持续带来相关的介绍。</p><p><b>由于本文所涉及的信息有些专业，若您对于汽车发动机润滑油方面的知识不太清楚，建议您先阅读下面两个文章之后再来阅读本文。</b></p><p>1、关于机油的基础知识、合理使用及答疑http://www.autohome.com.cn/drive/200901/52811.html</p><p>2、告诉你不知道的—国内润滑油品牌大汇总http://www.autohome.com.cn/drive/200911/78210.html</p><p>另外您对汽车维修以及装饰方面有任何方面问题均可以在我的编辑博客中留言，我会进行整理后为您解答。（点击可进入：翟元的博客）</p><p><b>汽车装饰相关系列文章：</b></p><p>汽车贴膜解析(二)热点关注问题解析http://www.autohome.com.cn/market/201005/113996.html</p><p>汽车装饰美容讲解系列之汽车贴膜解析http://www.autohome.com.cn/market/201005/112443.html</p><p><b>在正式开始介绍之前，有几个问题还需要需要进行解释：</b></p><p><b>问题一、原厂润滑油与市场买到的品牌润滑油有什么区别？</b></p> </div>
+        </div>
+        <!--end text_content--> 
+      </div>
+      <!--end block_content--> 
+    </div>
+    <!--end block-->
+        <div class="block"  id="b_118">
+      <div class="block_content" id="bc_118" >
+        <div class="img_content" id="ic_118"> <img 
+        onError="javascript:;this.width=0;this.height=0;"
+        class="img" id="img_118" title="服务较用心！广汽本田4S店服务调查" alt="服务较用心！广汽本田4S店服务调查"  
+                     src="http://127.0.0.1/autoreader/images/0/118_9102.jpg" 
+                     width="500" height="375"/> </div>
+        <!--end img_content-->
+        <div class="text_content" id="tc_118">
+          <h2 id="t_118"> <a target="_blank" href="http://127.0.0.1/autoreader/reader/articlecontent/118.html" > 服务较用心！广汽本田4S店服务调查 </a> </h2>
+          <h3>汽车之家 用车养车 广汽本田-雅阁</h3>
+          <div class="text" id="t_118"> <p>[汽车之家 用车信息]  近期我们针对一些品牌4S店的服务情况做过一系列的调查&lt;点击进入:（广汽丰田4S店服务调查）（上海大众4S店服务调查）&gt;，在之前几篇文章里，有不少网友在回复中表示对于此类文章的评分项目和标准并不十分理解，在开始今天的文章之前，我们先就这一系列文章的评分项目及标准为大家做一个简单的介绍：</p><p>『上图仅供本页说明使用』</p><p>●  目的：商家提高服务意识/消费者享受更好的服务</p><p>相信很多朋友都有过买车前选车的经历，同样的价格可选的车型有很多，每款车型各有千秋，如何选择确实很头疼。</p><p>的确，随着汽车行业的飞速发展，市场中可选的品牌和车款也越来越多，竞争自然也是愈发激烈，在这样一个大环境下，汽车在销售环节纷纷遇到了瓶颈，单纯依靠品牌和价格很难互相拉开差距，于是几乎所有的厂商都从服务环节下手，希望以此换来消费者的好感，从而带动销量，也是出于这样一个原因，我们决定制作服务方面的调查文章。</p><p>●  为什么选择销售环节作为调查对象：</p><p>服务所体现的方面有很多，之所以选择销售端来进行体验(不少网友表示更希望看到售后服务调查)，原因有两点，首先：要想拥有一辆车第一步是要到4S店看车购车，4S店是一个品牌的门面，4S店销售人员的服务直接影响到消费者对于品牌的印象。</p><p>第二：4S店也是品牌的缩影，来店看车的绝大多数人都是想要买车的人，作为消费者可以试想一下，如果商家在从你兜里掏钱时都没有一个好态度，那日后车辆出现问题，还能指望他们什么呢。</p><p>『上图仅供本页说明使用』</p><p>●  关于打分项目和标准</p> </div>
+        </div>
+        <!--end text_content--> 
+      </div>
+      <!--end block_content--> 
+    </div>
+    <!--end block-->
+        <div class="block"  id="b_117">
+      <div class="block_content" id="bc_117" >
+        <div class="img_content" id="ic_117"> <img 
+        onError="javascript:;this.width=0;this.height=0;"
+        class="img" id="img_117" title="小保养365元 2011款雅阁保养成本解析" alt="小保养365元 2011款雅阁保养成本解析"  
+                     src="http://127.0.0.1/autoreader/images/0/117_9059.jpg" 
+                     width="500" height="550"/> </div>
+        <!--end img_content-->
+        <div class="text_content" id="tc_117">
+          <h2 id="t_117"> <a target="_blank" href="http://127.0.0.1/autoreader/reader/articlecontent/117.html" > 小保养365元 2011款雅阁保养成本解析 </a> </h2>
+          <h3>汽车之家 用车养车 广汽本田-雅阁</h3>
+          <div class="text" id="t_117"> <p>[汽车之家 维修保养]  今天我们将给大家带来的是2011款广汽本田-雅阁的保养解析。在这个竞争激烈的中型车细分市场，占据优势的依旧是日系三大车型：雅阁、凯美瑞、天籁， 雅阁作为国内市场上备受关注的中型车之一，定位为商务和家庭用车，下面我们来看看它在后期保养上表现如何。</p><p>● 4S店内车型保养详情：</p><p>从上一页的厂家的保养手册分析，虽然厂家手册有提供详细的保养计划建议，为了更透彻地了解真实保养情况，我们像以往一样直接来到广汽本田4S店再作透彻的保养成本解析，然后把最关键的4S店保养建议和保养收费清楚明确地显示给大家参考。</p><p>从上面的表格我们可以看到，广汽本田4S店给雅阁车主的保养计划建议与厂家并不相同，厂家建议保养周期为1万公里更换机油滤清器，而4S店建议5000公里或3个月更换。同时，4S店建议车主使用236元/桶的合成机油。</p><p>在使用236元/桶合成机油的前提下，做一次小保养费用为365元，每4万公里时做一次大保养费用大概为一千多，雅阁车型行驶10万公里所需保养费用共为11876元，由于雅阁手动车型相对较少，所以本次调查不涉及手动车型，并且只对2.0L/2.4L车型进行保养调查和解析。</p><p>● 原厂保养配件实物图</p><p>从上述表格的配件价格与工时费来看，相比起国内美系、法系、韩系一些热销的中型车相差不大，4S店建议雅阁车主使用236元的中级合成机油，这样相比起使用矿物油对发动机保养维护要好；而且相比起使用全合成机油来说要便宜很多。</p><p>● 实店售后服务调查：</p><p>车辆的售后服务除了包含最主要的售后维修保养成本外，售后休息区和售后车间也是影响售后服务质量的地方，每位维修保养的车主都希望有一个配置齐全干净宽敞的车间来为爱车维修保养，并在维修保养等待时有一个舒适、休闲、多功能的休息区休息，那么在这方面我们特意作了以下调查。下面是编辑对广汽本田4S店的服务调查内容：</p><p>4S店对顾客的照顾还算是比较贴心，为到店做保养的车主的设置了一个多功能休闲的休息室，车主可以在休息室内休息或者观看电视节目或者上网以消磨等待的时间，同时也可以享用按摩座椅、打桌球等。除此之外，还有提供免费午餐和免费茶水服务，不过售后休息室离车间有一段距离，车主需要走一段路才能到达，据说，售后休息会在年内搬到售后车间二楼并且重新装修，相信修整后服务质量会有所提升。</p> </div>
+        </div>
+        <!--end text_content--> 
+      </div>
+      <!--end block_content--> 
+    </div>
+    <!--end block-->
+        <div class="block"  id="b_116">
+      <div class="block_content" id="bc_116" >
+        <div class="img_content" id="ic_116"> <img 
+        onError="javascript:;this.width=0;this.height=0;"
+        class="img" id="img_116" title="最快30分钟搞定 本田行车电脑升级流程" alt="最快30分钟搞定 本田行车电脑升级流程"  
+                     src="http://127.0.0.1/autoreader/images/0/116_9056.jpg" 
+                     width="500" height="550"/> </div>
+        <!--end img_content-->
+        <div class="text_content" id="tc_116">
+          <h2 id="t_116"> <a target="_blank" href="http://127.0.0.1/autoreader/reader/articlecontent/116.html" > 最快30分钟搞定 本田行车电脑升级流程 </a> </h2>
+          <h3>汽车之家 用车养车 广汽本田-雅阁</h3>
+          <div class="text" id="t_116"> <p>[汽车之家 质量追踪]  由于自动变速箱程序存在缺陷，本田对旗下04-09年期间生产的部分自动挡车型进行了召回。此次召回涉及76万辆车，其中不乏奥德赛，雅阁等畅销多年且换代多次的车型，为了方便车主了解召回相关信息及业务流程，我们近日对本田的召回业务进行了全程体验。</p><p>本次召回主要涉及广汽本田雅阁、奥德赛，仅有一部分东风本田的思铂睿，而无论是广汽本田还是东风本田在变速箱程序升级上面的流程是一样的，我们本次将以广汽本田车型为例子说明召回流程。</p> </div>
+        </div>
+        <!--end text_content--> 
+      </div>
+      <!--end block_content--> 
+    </div>
+    <!--end block-->
+        <div class="block"  id="b_115">
+      <div class="block_content" id="bc_115" >
+        <div class="img_content" id="ic_115"> <img 
+        onError="javascript:;this.width=0;this.height=0;"
+        class="img" id="img_115" title="日系三杰较量 雅阁/凯美瑞/天籁保养PK" alt="日系三杰较量 雅阁/凯美瑞/天籁保养PK"  
+                     src="http://127.0.0.1/autoreader/images/0/115_9027.jpg" 
+                     width="500" height="550"/> </div>
+        <!--end img_content-->
+        <div class="text_content" id="tc_115">
+          <h2 id="t_115"> <a target="_blank" href="http://127.0.0.1/autoreader/reader/articlecontent/115.html" > 日系三杰较量 雅阁/凯美瑞/天籁保养PK </a> </h2>
+          <h3>汽车之家 用车养车 广汽本田-雅阁</h3>
+          <div class="text" id="t_115"> <p>[汽车之家 保养对比]  如今的中型车市场不断有更新换代产品和新成员加入，可谓是车市中竞争最为激烈的战场了，根据相关数据来看，在这个中型车市场中日系轿车占据了半壁江山，凯美瑞/雅阁/天籁作为日本汽车业三大汽车厂商的代表作，无论是外形、空间、配置、舒适性、油耗等都得到消费者认可，并且推出多年依然是国内热销车型，在20-30万价格区间行成了三足鼎立之势。今天我们就不再是拿它们的舒适性、配置、性能之类来作对比，而是看看这三款热销的日系中型车在保养周期/项目、保养政策、售后服务等方面谁更具市场竞争力。</p><p>● 售后休息室与车间调查</p><p>车辆的售后服务除了包含最主要的售后维修保养成本外，售后休息区和售后车间也是影响售后服务质量的地方，每位维修保养的车主都希望有一个配置齐全干净宽敞的车间来为爱车维修保养，同时在维修保养等待时有一个舒适、好玩、多功能的休息区休息，那么在这方面我们分别对广汽本田、广汽丰田、东风日产设立的标准4S店进行调查，并在售后车间、售后休息室、服务流程方面来进行对比。</p><p>★ 广汽本田-雅阁</p><p>我们来到这家广汽本田4S店的客户休息室是设置在二楼，需要通过一条较窄的楼梯才能到达，不是很便捷，不过各项硬件设施都比较到位，视听区、上网区、茶水间、按摩座椅等都一应俱全。另外，要提及一下就是目前该店已经计划改造客户休息室，相信改造后会提供更好的服务给车主。我们再来看看售后车间，售后车间面积很大，并且采光比较好，每个工位都比较整洁。</p><p>★ 广汽丰田-凯美瑞</p><p>广汽丰田4S店的客户休息室面积相对来说比较小，不过视听区、上网区、茶水间、按摩座椅等各项硬件设施一应俱全。另外，售后的车间面积也比较小，虽然工位不大，不过设置了5个快保工位，有效提高了车辆保养效率。</p><p>★ 东风日产-天籁</p><p>东风日产4S店的客户休息室由于是刚全新装修，无论是面积大小，休息区整洁干净程度都比前面两家4S店要好，视听区、上网区、茶水间、按摩座椅等各项硬件设施没有缺一，值得一赞的是在休息室设置了车辆维修保养信息监控视频，方便了到店维修保养的客户了解到车辆的保养进度，这点做得比较贴心。另外，售后车间面积比之前两家4S店要大，有70个工位，从售后整个规模来看，相比之下东风日产是最好的。</p><p>从上述对三款车型标准的4S店进行调查后，发现东风日产在售后休息室服务与售后车间都要比广汽本田、广汽丰田4S店做得好，尤其是提供了车辆维修保养信息看板等，都能体现出东风日产在售后服务上的贴心。</p> </div>
+        </div>
+        <!--end text_content--> 
+      </div>
+      <!--end block_content--> 
+    </div>
+    <!--end block-->
+        <!--end foreach articles--> 
+  </div>
+  <!--end data-bind --> 
+  <!---数据信息（id—weight）-->
+  <div id="data-info-1"  style="display:none;">
+        119-132,        118-90,        117-67,        116-172,        115-66      </div>
+</div>
+<!--分页后的数据信息（tid-[aid/N]）-->
+<div id="page-info" style="display:none;"> </div>
+<!--菜单-->
+<div class="controll" id="controll">
+  <div class="bottom left"> </div>
+  <div class="bottom right">
+    <button class="next" id="next"> <img alt="&gt;" src="http://127.0.0.1/autoreader/img/next.png"> </button>
+    <button class="prev" id="prev" > <img alt="&lt;" src="http://127.0.0.1/autoreader/img/prev.png"> </button>
+    <div class="numbering"> 
+    已加载<span  id="loaded-num" >5</span>/共计<span>5</span>篇文章
+       <span id="pagenumber" class="pagenumber">1</span>/ <span data-bind="pagecount" id="pagecount" class="pagecount">1</span>页
+        
+    </div>
+  </div>
+</div>
+<!--文章列表-->
+<div class="sidebar" id="article_list"> </div>
+<button class="open-sidebar" id="list">目录</button>
+<button class="close-sidebar" id="list-close">关闭</button>
+<!--引入js--> 
+<script src="http://127.0.0.1/autoreader/js/user/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+var tempJson=[{"ti":"23","ba":"6","pinfo":"23,6,8,6,0,0,3,2,0,2,3,6,3,0,5,3,3,3,5,6,5,0,8,3,5,3,8,6"},{"ti":"20","ba":"6","pinfo":"20,6,8,2,0,0,3,1,0,1,3,2,3,0,5,1,3,1,5,2,5,0,8,1,5,1,8,2"},{"ti":"6","ba":"6","pinfo":"6,4,2,3,0,0,1,3,1,0,2,1,1,1,2,2,1,2,2,3"},{"ti":"16","ba":"5","pinfo":"16,5,8,6,0,0,3,6,3,0,6,3,3,3,6,6,6,0,8,4,6,4,8,6"},{"ti":"14","ba":"5","pinfo":"14,5,8,3,0,0,5,1,0,1,5,3,5,0,8,1,5,1,8,2,5,2,8,3"},{"ti":"15","ba":"5","pinfo":"15,5,4,3,0,0,2,1,0,1,2,3,2,0,4,2,2,2,3,3,3,2,4,3"},{"ti":"17","ba":"5","pinfo":"17,5,4,2,0,0,2,2,2,0,3,1,2,1,3,2,3,0,4,1,3,1,4,2"},{"ti":"18","ba":"5","pinfo":"18,5,4,3,0,0,2,3,2,0,3,1,3,0,4,1,2,1,4,2,2,2,4,3"},{"ti":"19","ba":"5","pinfo":"19,5,8,6,0,0,3,2,3,0,5,2,0,2,5,6,5,0,8,3,5,3,8,6"},{"ti":"26","ba":"5","pinfo":"26,5,8,2,0,0,2,1,2,0,5,1,0,1,3,2,3,1,5,2,5,0,8,2"},{"ti":"24","ba":"5","pinfo":"24,5,8,2,0,0,3,2,3,0,5,1,3,1,5,2,5,0,8,1,5,1,8,2"},{"ti":"13","ba":"5","pinfo":"13,5,8,3,0,0,3,1,0,1,3,3,3,0,5,2,3,2,5,3,5,0,8,3"},{"ti":"25","ba":"5","pinfo":"25,5,6,2,0,0,3,1,3,0,6,1,0,1,2,2,2,1,4,2,4,1,6,2"},{"ti":"21","ba":"4","pinfo":"21,4,8,2,0,0,5,1,5,0,8,1,0,1,4,2,4,1,8,2"},{"ti":"5","ba":"4","pinfo":"5,4,4,3,0,0,3,3,3,0,4,1,3,1,4,2,3,2,4,3"},{"ti":"7","ba":"4","pinfo":"7,4,4,2,0,0,2,2,2,0,4,1,2,1,3,2,3,1,4,2"},{"ti":"8","ba":"4","pinfo":"8,4,8,3,0,0,5,3,5,0,8,1,5,1,8,2,5,2,8,3"},{"ti":"9","ba":"4","pinfo":"9,4,8,2,0,0,3,2,3,0,5,1,3,1,5,2,5,0,8,2"},{"ti":"10","ba":"4","pinfo":"10,4,4,2,0,0,1,1,1,0,4,1,0,1,2,2,2,1,4,2"},{"ti":"11","ba":"4","pinfo":"11,4,4,2,0,0,1,1,1,0,4,1,0,1,3,2,3,1,4,2"},{"ti":"12","ba":"4","pinfo":"12,4,8,3,0,0,3,1,3,0,5,1,0,1,5,3,5,0,8,3"},{"ti":"27","ba":"3","pinfo":"27,3,8,3,0,0,5,3,5,0,8,2,5,2,8,3"},{"ti":"28","ba":"3","pinfo":"28,3,8,3,0,0,5,3,5,0,8,1,5,1,8,3"},{"ti":"29","ba":"3","pinfo":"29,3,8,3,0,0,5,2,0,2,5,3,5,0,8,3"},{"ti":"30","ba":"3","pinfo":"30,3,8,2,0,0,5,1,0,1,5,2,5,0,8,2"},{"ti":"22","ba":"3","pinfo":"22,3,8,2,0,0,3,2,3,0,8,1,3,1,8,2"},{"ti":"31","ba":"3","pinfo":"31,3,3,1,0,0,1,1,1,0,2,1,2,0,3,1"},{"ti":"4","ba":"3","pinfo":"4,3,2,2,0,0,1,2,1,0,2,1,1,1,2,2"},{"ti":"3","ba":"3","pinfo":"3,3,8,3,0,0,5,1,0,1,5,3,5,0,8,3"},{"ti":"2","ba":"2","pinfo":"2,2,2,1,0,0,1,1,1,0,2,1"},{"ti":"1","ba":"1","pinfo":"1,1,1,1,0,0,1,1"}];/*json格式模版信息*/
+var VALVE_WEIGHT=600;/*单页文章阀值*/
+</script> 
+<script src="http://127.0.0.1/autoreader/js/user/jigsaw.js" type="text/javascript"></script> 
+<script type="text/javascript">
+var windowSize= new Object();
+var BASE_URL="http://127.0.0.1/autoreader/";
+var SID=617;
+var CT=4;
+windowSize.width=$(window).width();
+windowSize.height=$(window).height();
+$("body").css({width:$(window).width(),height:$(window).height()})
+pageLength=saw(tempJson,windowSize,"data-bind-1","data-info-1");
+$("#pagecount").html(pageLength);
+$(window).bind('resize',
+	  function(){
+	  }
+);
+</script> 
+<script type="text/javascript">
+if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))|| (navigator.userAgent.match(/Android/i))){
+	 //$("#controll").hide();
+	 $.get("http://127.0.0.1/autoreader/js/user/reader.mobile.js");
+}else{
+	 $.get("http://127.0.0.1/autoreader/js/user/reader.js");
+}
+</script> 
+<!--edit by julian 2011/09/23 -->
+</body>
+</html>

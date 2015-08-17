@@ -1,0 +1,48 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link media="screen" rel="stylesheet" href="<?php echo $base_url;?>css/user/colorbox.css" />
+<div class="top_bar" id="top_bar">
+  <div class="logo">
+    <h1 > <a target="_self"  href="<?php echo $base_url;?>" >
+    <img height="20px" style="margin:10px 0px;"src="<?php echo $base_url;?>img/logo.gif"/>
+    </a></h1>
+    </div> 
+  <?php if(isset($showSeriesInfo)){?>
+     <div  class="onsel_series">
+     <a href="<?php echo $base_url;?>series/info/<?php echo $seriesInfo['cat_id'];?>.html">
+      当前车系：<?php echo $seriesInfo['cat_name'];?>
+       <img width="44" height="33" src="<?php echo $base_url;?>images/series_img/<?php echo $seriesInfo['series_img'];?>" style="margin-top:2px;"/>
+       </a>
+       <a href="<?php echo $base_url;?>seriesinformation/information/<?php echo $seriesInfo['cat_id'];?>.html">车系参数</a>
+       <a id="article_filter"  href="<?php echo $base_url;?>series/competeseries/<?php echo $seriesInfo['cat_id'];?>" >文章筛选</a>
+       <a href="<?php echo $base_url;?>seriescomment/comment/<?php echo $seriesInfo['cat_id'];?>.html">车系点评 </a>
+    </div>
+   <?php }?>
+   
+   <?php if(!isset($index)){?>
+   <div  class="return" >
+     <a title="" href="javascript:history.go(-1);"><img src="<?php echo $base_url;?>img/undo_16x16.png" style="margin: 12px 2px;"/>返回</a>
+     </div>
+   <?php }?>   
+   
+  <?php if(!isset($index)){?>
+  <div class="serach_tool_box">
+  <div class="serach_tool">
+    <input type="text" onclick="this.value=''" value="搜索车系"  class="key" id="top_key" onkeyup="showSerachBoxUseKey(event)">
+    <img src="<?php echo $base_url;?>img/search_tool_icon.png" onclick="showSerachBox()"></div>
+    </div>
+  <?php }?>
+  <div class="user_info">
+    <?php if(!$this->session->userdata('mobile_phone')){?>
+    <a class="nobg" id="topbar_login" href="<?php echo $base_url;?>user/showLoginBox" > <img src="<?php echo $base_url;?>img/user_12x16.png"/>登录</a> <a href="<?php echo $base_url;?>user/sign.html">注册</a>
+    <?php }else{?>
+     <a class="nobg" href="<?php echo $base_url;?>user.html"> <img src="<?php echo $base_url;?>img/user_12x16.png"/><?php echo $this->session->userdata('mobile_phone');?></a>
+      <a href="<?php echo $base_url;?>note/usernotes.html">
+        笔记
+      </a> 
+      <a href="<?php echo $base_url;?>user/userlogout">退出</a> 
+      <a  href="<?php echo $base_url;?>user/userinfo"> <img src="<?php echo $base_url;?>img/icon/cog_alt_16x16.png"/> </a>
+    <?php }?>
+    
+  </div>
+  <div class="clear"></div>
+</div>

@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link type="text/css" media="all" href="<?php echo $base_url;?>css/reset.css" rel="stylesheet"/>
+<link type="text/css" media="all" href="<?php echo $base_url;?>css/user/style.css" rel="stylesheet"/>
+<link media="screen" rel="stylesheet" href="<?php echo $base_url;?>css/user/colorbox.css" />
+<title><?php echo $title;?></title>
+
+
+</head>
+<body>
+<?php $this->load->view('user/lib/page_header.html');?>
+<div class="wrap">
+
+  <div   class="series"  id="concerned_series">
+    <div class="title" style="line-height:24px; vertical-align:middle;">
+            我的关注
+    </div>
+    <div id="added_series">
+    <?php foreach($userConcerned as $key=>$val){?>
+     <p class="series_box"> 
+       <img class="opt_series" onclick="delConcerned(<?php echo $val['cat_id'];?>,'<?php echo $val['cat_name'];?>',this)" 
+        src="<?php echo $base_url;?>img/icon/1_p.png"/>
+       <a href="<?php echo $base_url;?>series/info/<?php echo $val['cat_id'];?>.html">
+         <img class="spi"  width="100px" height="75px" src="<?php echo $base_url;?>images/series_img/<?php echo $val['series_img'];?>">
+         <?php echo $val['cat_name'];?> <br/><b  class="articles_num" ><?php echo $val['articles_num'];?></b>篇文章
+       </a> 
+       </p>
+    <?php }?>
+         <a class="series_box add_series" id="ajax" href="<?php echo $base_url;?>series/showSerachBox"> 
+         <img class="spi"  width="" height="" src="<?php echo $base_url;?>img/plus_16x16.png"/>
+         <span>添加新车系</span>
+       </a>
+    <div class="clear" style="clear:both;"></div>
+    </div>
+    <!--ene series_box-->  
+  </div>
+  <!--ene series--> 
+  <div class="notes_favorate">
+  <div class="user_notes" id="user_notes_userpage" style="position:relative;">
+     <div class="title">我的笔记
+     <a href="<?php echo $base_url;?>note/usernotes.html">
+       <img alt="" class="icon_img" src="<?php echo $base_url;?>img/fullscreen_alt_24x24.png"/>
+     </a></div>
+     <?php if(count($userNotes)==0){?>
+       <img alt=""  src="<?php echo $base_url;?>img/note_tutorial.jpg"/>
+     <?php }else{?>
+     <div id="user_notes_list" style="top:30px;">
+     <?php foreach($userNotes['data'] as $key=>$day){?>
+       <?php foreach($day['notes'] as $key=>$val){?>
+       <div class="note" style="float:left;">
+         <p class="info"> 
+          车系：<?php echo $val['cat_name'];?>
+          标签：
+          <a  target="_blank"href="<?php echo $base_url;?>reader/articlecontent/<?php echo $val['ArticleID'];?>.html">原文</a>
+          
+          <span class="opt_note">
+          <span class="time"><?php echo $val['ftime'];?></span>
+           </span>
+          </p>
+         <p class="content">
+         <?php if($val['note_type']==1){?>
+            <span > <?php echo $val['content'];?></span>
+            <?php }elseif($val['note_type']==2){?>
+          <table  width="100%">
+            <tr>
+              <?php foreach($val['content'] as $k=>$a ){?>
+              <td  class="td_left attr_name"><?php echo $a['attr_name'];?></td>
+              <td class="attr_val"><?php echo $a['attr_value'];?></td>
+              <?php if(fmod($k+1,2)==0){?>
+            </tr>
+            <tr>
+              <?php }elseif(($k+1)==count($val['content'])){?>
+              <td class="td_left ">&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <?php }?>
+            <?php }?>
+          </table>
+          <?php }?>
+         </p>
+       </div>
+     <?php } }?>
+     <div class="clear"></div>
+     </div>
+     <div style="text-align:center;position:absolute;bottom:0px; left:45%;">
+         <img alt="上一页" src="<?php echo $base_url;?>img/arrow_left_16x16.png" onClick="$('#user_notes_list').slipLeft(480).printCount('#note_pagenumber');"/>
+         <span id="note_pagenumber">1</span>/<?php echo $userNotes['length']?>
+         <img alt="下一页" src="<?php echo $base_url;?>img/arrow_right_16x16.png" onClick="$('#user_notes_list').slipRight(480).printCount('#note_pagenumber');"/>
+      </div>
+      <?php }?>
+  </div>
+   <!--ene user_notes--> 
+    <div class="user_favorate">
+	<div class="title">我的收藏</div>
+	<div class="content_title">收藏</div>
+	<div class="favorite_body" id="favorite_body">
+		<?php if($favorite_count==0){?>
+		<div class="favorite_point"><?php echo $favorite_point;?></div>
+		<?php }?>
+		<div class="favorite_main">
+			<div class="favorite_pages" id="favorite_pages">
+				<?php $favorite_pl=0 ;?>
+				<?php foreach($favorite as $key=>$val){?>
+					<?php if(fmod($key+1,$history_page_num)==1){?>
+					  <div class="favorite_page" id="favorite_page">
+					<?php }?>
+						<div class="favorite_line" id="favorite_line<?php echo $val['ArticleID'];?>">
+							<div class="favorite_title"><a  target="_blank" title="<?php echo $val['Title'];?>" href="<?php echo $base_url;?>reader/articlecontent/<?php echo $val['ArticleID'];?>.html"><?php echo $val['Title'];?></a></div>
+							<div class="favorite_time"><?php echo $val['add_time'];?></div>
+							<div class="favorite_del">
+							<img src="<?php echo $base_url;?>img/icon/x_alt_16x16.png" style="cursor:pointer;" alt="点击删除" title="点击删除" 
+                            onclick="delFavorite(<?php echo $val['ArticleID'];?>)"/>
+							</div>
+						</div>
+					<?php if(fmod($key+1,$favorite_page_num)==0||$key+1==$favorite_count){?>
+						<?php $favorite_pl++ ;?>
+						</div>
+					<?php }?>
+				<?php }?>
+			</div>
+		</div>
+	</div>
+		<div style="text-align:center;">
+		    <img alt="上一页" title="上一页" style="cursor:pointer;" onclick="favorite_up_page();" src="<?php echo $base_url;?>img/arrow_left_16x16.png"/>
+		 	<span id="favorite_pagenumber" class="favorite_pagenumber"><?php echo $favorite_pl>0?1:0;?></span>/ <span id="favorite_pagecount" class="favorite_pagecount"><?php echo $favorite_pl;?></span>
+		 	<img alt="下一页" title="下一页" style="cursor:pointer;" onclick="favorite_next_page();" src="<?php echo $base_url;?>img/arrow_right_16x16.png"/>
+		</div>
+	
+
+	<hr />
+
+	
+	<div class="content_title">今天读过</div>
+	<?php if($history_count==0){?>
+	<div class="history_point"><?php echo $history_point;?></div>
+	<?php }?>
+		<div class="history_main">
+			<div class="history_pages" id="history_pages">
+			<?php $history_pl=0 ;?>
+				<?php foreach($history as $key=>$val){?>
+				<?php if(fmod($key+1,$history_page_num)==1){?>
+				  <div class="history_page">
+				<?php }?>
+					<div class="history_line">
+				    	<div class="history_title"><a target="_blank" title="<?php echo $val['Title'];?>" href="<?php echo $base_url;?>reader/articlecontent/<?php echo $val['ArticleID'];?>.html"><?php echo $val['Title'];?></a></div>
+					    <div class="history_time"><?php echo $val['time'];?></div>
+					</div>
+				<?php if(fmod($key+1,$history_page_num)==0||$key+1==$history_count){?>
+				   <?php $history_pl++ ;?>
+				  </div>
+				<?php }?>
+				<?php }?>
+			</div>
+		</div>
+	<div style="text-align:center;">
+         <img alt="上一页" title="上一页" style="cursor:pointer;" onclick="history_up_page();" src="<?php echo $base_url;?>img/arrow_left_16x16.png"/>
+         <span id="history_pagenumber" class="history_pagenumber"><?php echo $history_pl>0?1:0;?></span>/ <span id="history_pagecount" class="history_pagecount"><?php echo $history_pl;?></span>
+    	<img alt="下一页" title="下一页" style="cursor:pointer;" onclick="history_next_page();" src="<?php echo $base_url;?>img/arrow_right_16x16.png"/>
+    </div>
+
+    </div>
+    <!--ene user_notes--> 
+    <div class="clear" style="clear:both;"></div> 
+   </div>
+    <!--ene notes_favorate-->  
+</div>
+<?php $this->load->view('user/lib/page_foot.html');?>
+<script type="text/javascript">
+var BASE_URL="<?php echo $base_url;?>";
+var ADD_SERIES_BOX='added_series';
+var CAN_ADD_NOTES=false;
+var FAVORITE_RESULET=document.getElementById('favorite_body');
+var history_pageLength=<?php echo $history_pl;?>;
+var favorite_pageLength=<?php echo $favorite_pl;?>;
+var note_pageLength=<?php echo $userNotes['length']?>
+</script>
+<script src="<?php echo $base_url;?>js/user/jquery.js" type="text/javascript"></script> <strong></strong>
+<script src="<?php echo $base_url;?>js/user/jquery.slip.js" type="text/javascript"></script> 
+<script src="<?php echo $base_url;?>js/user/jquery.colorbox-min.js" type="text/javascript"></script>
+<script src="<?php echo $base_url;?>js/user/series.concerned.js" type="text/javascript"></script>
+<script src="<?php echo $base_url;?>js/user/common.js" type="text/javascript"></script>
+<script src="<?php echo $base_url;?>js/user/note.js" type="text/javascript"></script> 
+<script src="<?php echo $base_url;?>js/user/favorite.js" type="text/javascript"></script> 
+<script src="<?php echo $base_url;?>js/user/history.js" type="text/javascript"></script> 
+<script type="text/javascript">
+$("#user_notes_list").slip(490,note_pageLength,true,null);
+$("#user_notes_userpage").css('height',$("#user_notes_list").outerHeight()+50);
+$(document).ready(function(){
+			$("#ajax").colorbox({innerWidth:"900px", innerHeight:"600px"});
+});
+</script>
+</body>
+</html>

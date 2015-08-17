@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link type="text/css" media="all" href="<?php echo $base_url;?>css/reset.css" rel="stylesheet"/>
+<link type="text/css" media="all" href="<?php echo $base_url;?>css/user/style.css" rel="stylesheet"/>
+<title></title>
+</head>
+<body >
+<div class="compete_series">
+<a class="cs_a"  href="javascript:articles();"> 选择下表中车系，查看与“<?php echo $seriesInfo['cat_name'];?>”对比的文章 <span class="c_an" id="san">0</span> </a>
+  <form target="_self" method="post"    action="<?php echo $base_url;?>reader/qarticles" id="qarticles">
+    <input type="hidden"/ name="sid" value="<?php echo $seriesInfo['cat_id'];?>">
+    <table width="100%" id="cs_content">
+      <thead>
+          </tr>
+        
+        <tr>
+          <?php foreach($competeSeries as  $key=>$cs){?>
+          <td  align="left"  style=" text-align:left"><a href="javascript:;">
+            <label for="cs_<?php echo $cs['cat_id'];?>"  style="display:block;" >
+              <input class="<?php echo $cs['ArticleID'];?>" onClick="isSel(this);getAn();"  type="checkbox" value="<?php echo $cs['cat_id'];?>" id="cs_<?php echo $cs['cat_id'];?>" name="csids[]"/>
+              <?php echo $cs['cat_name'];?> </label>
+            </a></td>
+          <?php if(fmod($key+1,3)==0){?>
+        </tr>
+        <tr>
+          <?php }?>
+          <?php if((fmod($csLength,3)!=0)&&($csLength==($key+1))&&$csLength>3){?>
+          <?php for($i=0;$i<(3-fmod($csLength,3));$i++){?>
+          <td ><a>&nbsp;</a></td>
+          <?php }?>
+        </tr>
+        <?php }?>
+        <?php }?>
+        <tr>
+        <td colspan="3"><a>共计<?php echo $csLength;?>个对比车系</a></td>
+        </tr>
+      </thead>
+    </table>
+  </form>
+</div>
+</body>
+<script type="text/javascript">
+var BASE_URL="<?php echo $base_url;?>";
+var SID=<?php echo $seriesInfo['cat_id'];?>;
+function showCars(sid,opt){
+	if(opt.getAttribute("open")==1){
+		$("#series_cars_"+sid).hide();
+		opt.setAttribute("open",0);
+		opt.src=BASE_URL+"img/plus_16x16.png";
+	}else{
+		$("#series_cars_"+sid).show();
+		opt.src=BASE_URL+"img/minus_16x16.png";
+		opt.setAttribute("open",1);
+	}
+}
+/**
+ * 获得选中的checkbox的值
+ * @param content checkbox的父容器
+ * @return
+ */
+function getCheckboxsValue(content){
+	var content=document.getElementById(content);
+	var snArray = new Array();
+	var eles = content.getElementsByTagName("input");
+	for (var i=0; i<eles.length; i++) {
+		if (eles[i].tagName == 'INPUT' && eles[i].type == 'checkbox' && eles[i].checked && eles[i].value != 0) {
+			snArray.push(eles[i].value);
+		}
+	}
+	if (snArray.length == 0) {
+		return false;
+	} else {
+		return snArray.join(",");
+	}
+}
+/**
+ * 获得搜索的文章选中文章数量
+ */
+function getAn(){
+	var v=getCheckboxsValue("cs_content");
+	if(!v){
+	    $("#san").html(0);
+		return false;
+	}
+	$.post(
+	    BASE_URL+"series/getsan",
+		{
+		   sid:SID,
+		   csids:v
+		},
+		function(numb){
+			$("#san").html(numb);
+		},
+		'text'
+	)
+}
+function isSel(obj){
+	var classN=obj.className;
+	
+	if(obj.checked){
+		$("."+classN).parent().parent().css("color","#2E52A4");
+		obj.parentNode.parentNode.className="sis_sel"
+	}else{var v=getCheckboxsValue("cs_content");
+	     $("."+classN).parent().parent().css("color","#222222");
+	    obj.parentNode.parentNode.className="";
+	}
+}
+function articles(){
+	var v=getCheckboxsValue("cs_content");
+	if(v){
+		document.getElementById("qarticles").submit();
+	}else{
+		alert("请先选择车系！");
+	}
+}
+</script>
+</html>

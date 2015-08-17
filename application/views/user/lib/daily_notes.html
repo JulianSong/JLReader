@@ -1,0 +1,60 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+     <?php foreach($userNotes['data'] as $key=>$day){?>
+       <div class="date_note"><?php echo $day['date_time'];?></div>
+       <?php foreach($day['notes'] as $key=>$val){?>
+       <div class="note" id="note_<?php echo $val['note_id'];?>">
+            <div   class="left note_content" id="ncd_<?php echo $val['note_id'];?>">
+              <p class="content" id="ncp_<?php echo $val['note_id'];?>">
+                <input type="checkbox" class="note_id"  value="<?php echo $val['note_id'];?>" name="notes_id[]"/>
+             
+              <?php if($val['note_type']==1){?>
+                 <span id="ncs_<?php echo $val['note_id'];?>"> <?php echo $val['content'];?></span>
+                 <a  class="note_original" target="_blank"href="<?php echo $base_url;?>reader/articlecontent/<?php echo $val['ArticleID'];?>.html">原文</a> <img title="点击编辑" id="opt_e_<?php echo $val['note_id'];?>" onClick="showEditer(<?php echo $val['note_id'];?>,this)" alt="点击编辑" src="<?php echo $base_url;?>img/pen_alt_fill_16x16.png"> <img title="点击保存" style="display:none;" id="opt_s_<?php echo $val['note_id'];?>" onClick="editNote(<?php echo $val['note_id'];?>,this)" alt="点击保存"  src="<?php echo $base_url;?>img/icon/check_16x13.png"> <img title="点击删除" onClick="delNotes(<?php echo $val['note_id'];?>)" alt="点击删除"  src="<?php echo $base_url;?>img/icon/x_alt_16x16.png">
+              <?php }elseif($val['note_type']==2){?>
+              <table  width="100%">
+                <tr>
+                  <?php foreach($val['content'] as $k=>$a ){?>
+                  <td  class="td_left attr_name">
+                    <?php echo $a['attr_name'];?>：</td>
+                  <td class="attr_val"><?php echo $a['attr_value'];?></td>
+                  <?php if(fmod($k+1,2)==0){?>
+                </tr>
+                <tr>
+                  <?php }elseif(($k+1)==count($val['content'])){?>
+                  <td class="td_left ">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <?php }?>
+                <?php }?>
+                 <tr>
+                 <th  colspan="4" style="line-height:29px; height:29px; text-align:left; vertical-align:middle; background:none; border:none;">
+                     <img title="点击删除" style="vertical-align:middle" onClick="delNotes(<?php echo $val['note_id'];?>)" alt="点击删除"  src="<?php echo $base_url;?>img/icon/x_alt_16x16.png">
+                 </th>
+                </tr>
+               </table>
+              <?php }?>
+              </p>
+            </div>
+            <div class="right note_info">
+              <p class="info"> <span class="time"><?php echo $val['ftime'];?></span>,
+                <!-- 修改笔记的相关车系 -->
+              <span id="series_<?php echo $val['note_id'];?>" style="display:none;">
+	              <?php if($val['relate']){?>
+	              <select id="select_<?php echo $val['note_id'];?>" onchange="setSerise(<?php echo $val['note_id'];?>);" onblur="showSeries(<?php echo $val['note_id'];?>)"  >
+			          <?php foreach($val['relate'] as $r=>$relate ){?>
+			          <option value="<?php echo $relate['SeriesID'];?>" <?php if($relate['SeriesID']==$val['SeriesID']){?> selected="selected" <?php }?>><?php echo $relate['cat_name'];?></option>
+			          <?php }?>
+	        	  </select>
+	              <?php }?>
+              </span>
+              
+                <span id="s_<?php echo $val['note_id'];?>" <?php if($val['relate']){?>title="点击修改相关车系" onclick="editSeries(<?php echo $val['note_id'];?>)" style="cursor:pointer;"<?php }?> ><?php echo $val['cat_name'];?></span>,
+                <img style="cursor:pointer;" title="点击编辑标签" id="opt_t_<?php echo $val['note_id'];?>" onClick="showTagEditer(<?php echo $val['note_id'];?>,this)" alt="点击编辑" src="<?php echo $base_url;?>img/pen_alt_fill_16x16.png";"> <img title="点击保存" style="display:none;cursor:pointer;" id="opt_ts_<?php echo $val['note_id'];?>" onClick="editNoteTag(<?php echo $val['note_id'];?>,this)" alt="点击保存"  src="<?php echo $base_url;?>img/icon/check_16x13.png"> 标签
+                <textarea rows="2" cols="29" wrap="soft" readonly class="note_tag" id="nt_<?php echo $val['note_id'];?>"><?php echo $val['note_tag'];?></textarea>
+               </p>
+                
+                </div>
+            <div class="clear"></div>
+          </div>
+       <?php } ?>
+     <?php } ?>

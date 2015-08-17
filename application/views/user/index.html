@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link type="text/css" media="all" href="<?php echo $base_url;?>css/reset.css" rel="stylesheet"/>
+<link type="text/css" media="all" href="<?php echo $base_url;?>css/user/style.css" rel="stylesheet"/>
+<link media="screen" rel="stylesheet" href="<?php echo $base_url;?>css/user/colorbox.css" />
+<title><?php echo $title;?></title>
+<style type="text/css">
+#serach_series{
+	height:480px;
+	overflow-y:scroll;
+}
+</style>
+</head>
+<body>
+ <?php $this->load->view('user/lib/page_header.html');?>
+<div class="wrap">
+ 
+  <div class="serach">
+  <h1 id="logo">
+     <a href="<?php echo $base_url;?>"><font color="#2E52A4">车</font><font color="#d12115">型</font><font color="#ef8f01">研</font><font>究</font></a>
+  </h1>
+    <span id="logo_befor_serach">
+        <a href="<?php echo $base_url;?>"><font color="#2E52A4">车</font><font color="#d12115">型</font><font color="#ef8f01">研</font><font>究</font></a>
+     </span>
+    <input type="text" class="key" id="key"  value="想找车系？输入名称或者拼音字母试试看！"  onClick="this.value=''"/>
+    <img  id="serach_button" style="cursor:pointer;" src="<?php echo $base_url;?>img/magnifying_glass_alt_32x32.png"  />
+  </div>
+  <!--ene search-->
+  <div class="icon_introduce" style="display:none;">
+   <img src="<?php echo $base_url;?>img/icon/1_s.png"/>可以阅读
+  <img src="<?php echo $base_url;?>img/icon/0_s.png"/>暂无文章&nbsp;&nbsp;
+  <img src="<?php echo $base_url;?>img/icon/0_p.png"/>
+   关注车系
+  <img src="<?php echo $base_url;?>img/icon/1_p.png"/>
+  取消关注
+  <img src="<?php echo $base_url;?>img/icon/del.png"/>
+  删除历史
+    <img src="<?php echo $base_url;?>img/icon/2_p.png"/>
+  无法操作
+  </div>
+  <div   class="series"  id="series">
+    <div class="hot">
+    <h3>大家关注</h3>
+    <div class="sliper">
+    <?php foreach($recommend as $key=>$val){?>
+     <p class="series_box"> 
+       <img class="opt_series"   style="display:none" onMouseOver="showOpt(this)" opt="<?php echo $val['is_concerned'];?>"
+       onMouseOut="showStat(this)" st="<?php echo $val['can_reade'];?>"
+        onclick="operate(<?php echo $val['cat_id'];?>,'<?php echo $val['cat_name'];?>',this)" 
+       src="<?php echo $base_url.'img/icon/'.$val['can_reade'].'_s.png';?>"/>
+       <a href="<?php echo $base_url;?>series/info/<?php echo $val['cat_id'];?>.html">
+         <img class="spi"  width="100px" height="75px" src="<?php echo $base_url;?>images/series_img/<?php echo $val['series_img'];?>"/>
+         <?php echo $val['cat_name'];?><br/><b  class="articles_num" ><?php echo $val['articles_num'];?></b>篇文章
+       </a> 
+       
+       </p>
+    <?php }?>
+    <div class="clear" style="clear:both;"></div><br>
+    </div>
+  </div>
+    <div class="history" id="history" >
+    <h3>最近看过<img  onClick="delAllHistory()"  src="<?php echo $base_url;?>img/icon/del.png"/></h3>
+     <?php  foreach($logoutViewedSeries as $val){?>
+     <p class="series_box"> 
+      <img class="opt_series" onClick="delHistory('<?php echo $val['cat_id'];?>',this)"  src="<?php echo $base_url;?>img/icon/del.png"/>
+       <a href="<?php echo $base_url;?>series/info/<?php echo $val['cat_id'];?>.html">
+         <img class="spi"  width="100px" height="75px" src="<?php echo $base_url;?>images/series_img/<?php echo $val['series_img'];?>"/>
+         <?php echo $val['cat_name'];?> 
+       </a> 
+       </p>
+    <?php }?>
+     <div class="clear" style="clear:both;"></div> 
+     </div>
+   </div>
+    <!--ene series-->
+</div>
+<?php $this->load->view('user/lib/page_foot.html');?>
+
+<script src="<?php echo $base_url;?>js/user/jquery.js" type="text/javascript"></script>
+<script src="<?php echo $base_url;?>js/user/jquery.slip.js" type="text/javascript"></script> 
+<script src="<?php echo $base_url;?>js/user/jquery.colorbox-min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $("#topbar_login").colorbox();
+});
+</script>
+<script type="text/javascript">
+var BASE_URL="<?php echo $base_url;?>";
+var LIANGE=3;    
+var SERACH_RESULET_CONTEBT=document.getElementById('series');
+var INDEX_PAGE=true;
+var cname="<?php echo $c_name;?>";
+if(!<?php echo count($logoutViewedSeries);?>){
+	$("#history").hide();
+}
+</script>
+<script src="<?php echo $base_url;?>js/user/series.concerned.js" type="text/javascript"></script>
+<script src="<?php echo $base_url;?>js/user/series.serach.js" type="text/javascript"></script>
+<script src="<?php echo $base_url;?>js/user/series.history.js" type="text/javascript"></script> 
+<script src="<?php echo $this->config->item('base_url');?>js/user/common.js" type="text/javascript"></script>   
+</body>
+</html>

@@ -1,0 +1,140 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<div class="car_attributes">
+  <div class=" attribute_group" >
+   <span class="ag car_price">
+   		 <?php if($car_price){?>
+      		 <?php echo $car_price['attr_name']?>：<?php echo $car_price['attr_value']?>万元
+    	 <?php }else{?>
+         	 	暂无价格信息
+         <?php }?>
+    </span> 
+    <?php foreach($attributes as $key=>$ag ){?>
+    <span class="ag" onclick="showTab(<?php echo $key;?>)" id="ag_<?php echo $key;?>"><?php echo $ag['group_name'];?> </span>
+    <?php }?>
+    <span class="ag" onclick="showCheckBox(this)" id="ante">
+     <img src="<?php echo $base_url ;?>img/pen_alt_fill_16x16.png"  style=" vertical-align:middle;" id="add_note_icon"  />
+     添加为笔记
+    </span>
+    <span class="ag add_note_opt" id="add_note_opt">
+    <span id="add_note" onclick="addNote();">
+     <img src="<?php echo $base_url ;?>img/check.png"  title="保存" alt="保存" style="vertical-align:middle;" id="add_note_icon"  />保存
+    </span>
+    <span id="cancel_add_note" onclick="hideCheckBox()">
+     <img src="<?php echo $base_url ;?>img/denied_16x16.png" alt="取消" title="取消" style=" vertical-align:middle;" id="add_note_icon"  />取消
+    </span>
+    </span>
+    <span class="ag" onclick="closeCA();">
+     文章筛选
+     </span>
+   </div>
+  <div class=" tabs" id="cs_tabs">
+    <?php foreach($attributes as $key=>$ag ){?>
+    <div class="tab" id="tab_<?php echo $key;?>">
+      <table  class="as"  width="100%" cellpadding="1" cellspacing="1px">
+        <tr>
+          <?php foreach($ag['attribute'] as $k=>$a ){?>
+          <td  class="td_left attr_name">
+          <input class="date_id" type="checkbox" value="<?php echo $a['goods_attr_id'];?>" />
+          <?php echo $a['attr_name'];?>
+          </td>
+          <td class="attr_val"><?php echo $a['attr_value'];?></td>
+          <?php if(fmod($k+1,2)==0){?>
+        </tr>
+        <tr>
+          <?php }elseif(($k+1)==count($ag['attribute'])){?>
+          <td class="td_left ">&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <?php }?>
+        <?php }?>
+      </table>
+    </div>
+    <?php }?>
+  </div>
+</div>
+<script type="text/javascript">
+var on_show=0;
+var on_show_div=null;
+function showTab(tab){
+	var on_show_tab=document.getElementById("tab_"+on_show);
+	getCV(on_show_tab,false);
+	on_show_tab.style.display="none";
+	var on_show_ag=document.getElementById("ag_"+on_show);
+	on_show_ag.className="ag";
+	var show=document.getElementById("tab_"+tab);
+	show.style.display="block";
+	var show_ag=document.getElementById("ag_"+tab);
+	show_ag.className+=" onsel";
+	on_show=tab;
+	on_show_div=show;
+	hideCheckBox();
+}
+showTab(0);
+/**
+ * 获得选中的checkbox的值
+ * @param content checkbox的父容器
+ * @return
+ */
+function getCV(content,cbshow){
+	var snArray = new Array();
+	var eles = content.getElementsByTagName("input");
+	for (var i=0; i<eles.length; i++) {
+		if(cbshow){
+			eles[i].style.display="inline";
+		}else{
+			eles[i].style.display="none";
+		}
+		if (eles[i].tagName == 'INPUT' && eles[i].type == 'checkbox' && eles[i].checked && eles[i].value != 0) {
+			snArray.push(eles[i].value);
+		}
+	}
+	if (snArray.length == 0) {
+		return false;
+	} else {
+		return snArray.join(",");
+	}
+}
+var cbisshow=false;
+function showCheckBox(obj){
+	getCV(on_show_div,true);
+	$(obj).hide();
+	$("#add_note_opt").show();
+}
+function hideCheckBox(){
+	$("#ante").show();
+	$("#add_note_opt").hide();
+	getCV(on_show_div,false);
+}
+/**
+ * 添加笔记
+ */
+function addNote() {
+	var v=getCV(on_show_div,true);
+	if(!v){
+		alert("请选择相关参数！");
+		return ;
+	}
+	$.post(BASE_URL + "note/add", {
+		s : SID,
+		nc :v,
+		t:2
+	}, function(result) {
+		if(result.error==0){
+			hideCheckBox();
+		   getCV(on_show_div,false);
+		}else if(result.error==1){
+		   alert("您还未登录不能添加笔记，请先登录！");
+		}else if(result.error==2){
+		   alert("文章id错误！");
+		}else if(result.error==3){
+		   alert("车系Id错误！");
+		}else if(result.error==5){
+		   alert("内容不能为空");
+		}else if(result.error==6){
+		   alert("未知系统错误！");
+		}else if(result.error==8){
+		   alert("您今天添加的笔记已经超出每日笔记最大数量，请您适当删除或者合并笔记！");
+		}
+	}, "json")
+}
+</script> 

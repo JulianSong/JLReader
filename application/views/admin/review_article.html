@@ -1,0 +1,14 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title><?php echo $title;?></title>
+</head>
+<frameset cols="20%,80%">
+   <frame src="<?php echo $base_url;?>admin/reviewarticle/reviewarticlelist">
+   <frameset rows="5%,95%">
+   <frame src="<?php echo $base_url;?>admin/reviewarticle/editarticlelist/1" name="editarticle">
+   <frame src="<?php echo $base_url;?>reader/articlecontent/1.html#" name="showarticle">
+   </frameset>
+</frameset>
+</html>

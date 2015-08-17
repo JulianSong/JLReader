@@ -1,0 +1,16 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<div class="sider_bar">
+<p><a  href="javascript: window.history.go(-1);">返回</a></p>
+<p><a  href="<?php echo $base_url;?>note/usernotes.html" >笔记</a></p>
+<p><a>收藏</a></p>
+<div id="user_concerned_siber_bar"></div>
+</div>
+<script type="text/javascript">
+ function showUserConcerned(){
+	 $.get(BASE_URL+"concerned/getuserconcered",
+	      function(html){
+			  $("#user_concerned_siber_bar").html(html);
+		  }
+	 )
+ }
+</script>

@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link type="text/css" media="all" href="<?php echo $base_url;?>css/reset.css" rel="stylesheet"/>
+<link type="text/css" media="all" href="<?php echo $base_url;?>css/user/style.css" rel="stylesheet"/>
+<link media="screen" rel="stylesheet" href="<?php echo $base_url;?>css/user/colorbox.css" />
+<title><?php echo $title;?></title>
+<style type="text/css">
+#series-title{
+	font-size:20px;
+	font-weight:bold;
+}
+#series-img-block{
+	position: absolute;
+	left: 20px;
+	top: 20px;
+	width:400px;
+}
+#miaosu-block{
+	position: relative;
+	left: 400px;
+	top: 20px;
+	width:600px;
+	min-height:320px;
+	margin:10px;
+	border-color: silver #D9D9D9 #D9D9D9;
+	border-style:solid;
+	border-width:1px;
+	margin-bottom: 30px;
+}
+#dianping-block{
+	position: relative;
+	left: 2px;
+	top: 0px;
+	width:1000px;
+	margin:10px;
+	border-color: silver #D9D9D9 #D9D9D9;
+	border-style:solid;
+	border-width:1px;
+}
+.miaosu-content{
+	min-height:65px;
+	margin-top: 10px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	margin-left: 15px;
+}
+.dianping-content{
+	margin-top: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	width:470px;
+}
+p{
+	margin-bottom:10px;
+	font-size:18px;
+	font-weight:bold;
+}
+img.big-img{
+	margin-top: 5px;
+}
+
+.clear {
+  clear: both;
+}
+
+
+</style>
+</head>
+<body>
+<?php $this->load->view('user/lib/page_header.html');?>
+<div class="wrap">
+
+<div id="series-img-block">
+<span id="series-title"><?php echo $seriesInfo['cat_name'];?></span><br><span>价格区间：<?php if($seriesInfo['price_zone_min']==0){echo '暂无';}else{echo $seriesInfo['price_zone_min'].'-'.$seriesInfo['price_zone_min'];?>万元<?php }?></span>
+<img class="big-img" height="285px" width="380px" alt="<?php echo $seriesInfo['cat_name'];?>" src="<?php echo $base_url?>images/series_img/<?php echo $seriesInfo['series_img'];?>">
+
+</div>
+
+<div id="miaosu-block">
+	<div class="miaosu-content">
+		<p>外观特色</p>
+		<span><?php echo $waiguantese['content'];?></span>
+		<?php if($waiguantese['ArticleID']!=0){?>
+		<a class="note_original" href="<?php echo $base_url?>reader/articlecontent/<?php echo $waiguantese['ArticleID']?>.html" target="_blank">原文</a>
+		<?php }?>
+	</div>
+	<div class="miaosu-content">
+		<p>动力性能</p>
+		<span><?php echo $donglixingneng['content'];?></span>
+		<?php if($donglixingneng['ArticleID']!=0){?>
+		<a class="note_original" href="<?php echo $base_url?>reader/articlecontent/<?php echo $donglixingneng['ArticleID']?>.html" target="_blank">原文</a>
+		<?php }?>
+	</div>
+	<div class="miaosu-content">
+		<p>配置特色</p>
+		<span><?php echo $peizhitese['content'];?></span>
+		<?php if($peizhitese['ArticleID']!=0){?>
+		<a class="note_original" href="<?php echo $base_url?>reader/articlecontent/<?php echo $peizhitese['ArticleID']?>.html" target="_blank">原文</a>
+		<?php }?>
+	</div>
+</div>
+
+<div id="dianping-block">
+<?php if($dianping){?>
+	<?php $left=0;$right=0;?>
+	<?php foreach($dianping as $key=>$val){?>
+		<div class="dianping-content" <?php if($left>$right){?>style="float:right;"<?php $right=222+$right+strlen($val['content']);}else{?>style="float:left;"<?php $left=222+$left+strlen($val['content']);}?>>
+			<p><?php echo $val['note_tag'];?></p>
+			<span><?php echo $val['content'];?></span>
+			<a class="note_original" href="<?php echo $base_url?>reader/articlecontent/<?php echo $val['ArticleID']?>.html" target="_blank">原文</a>
+		</div>
+	<?php }?>
+<?php }else echo '暂时无点评内容';?>
+<div class="clear"></div>
+
+</div>
+
+</div>
+<?php $this->load->view('user/lib/page_foot.html');?>
+<script type="text/javascript">
+var BASE_URL="<?php echo $base_url;?>";
+</script>
+<script src="<?php echo $base_url;?>js/user/jquery.js" type="text/javascript"></script>
+<script src="<?php echo $base_url;?>js/user/jquery.slip.js" type="text/javascript"></script> 
+<script src="<?php echo $base_url;?>js/user/jquery.colorbox-min.js" type="text/javascript"></script>
+<script src="<?php echo $base_url;?>js/user/common.js" type="text/javascript"></script>
+</body>
+</html>

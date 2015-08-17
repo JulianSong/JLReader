@@ -1,0 +1,86 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css"  media="all">
+.calendar_box table{
+	border-top:solid 1px #3d302f;
+	border-left:solid 1px #3d302f;
+}
+.calendar_box td,th{
+	border-bottom:solid 1px #3d302f;
+	border-right:solid 1px #3d302f;
+	width:38px;
+	height:30px;
+	text-align:center;
+	cursor:pointer;
+	background:#fff;
+	color:#3d302f;
+}
+.calendar_box td div{
+		position:relative;
+		height:30px;
+		line-height:30px;
+}
+.calendar_box .daily_note_num{
+	display:block;
+	position: absolute;
+	top: 0px;
+	right:0px;
+	font-size:12px;
+	height:12px;
+	line-height:12px;
+	color:#FFF;
+}
+.calendar_box .had_note{
+	background:#686868;
+	color:#FFF;
+}
+.calendar_box img{
+	position:inherit;
+}
+</style>
+<div class="calendar_box">
+<table cellspacing="0">
+  <thead>
+    <tr>
+      <th colspan="7" >
+       <img  onClick="toMonth(0)"  src="<?php echo $base_url;?>img/arrow_left_16x16.png"/>
+       <?php echo $year;?>年<?php echo $month;?>月
+        <img  onClick="toMonth(1)"  src="<?php echo $base_url;?>img/arrow_right_16x16.png"/>
+       </th>
+    </tr>
+    <tr>
+      <th>日</th>
+      <th>一</th>
+      <th>二</th>
+      <th>三</th>
+      <th>四</th>
+      <th>五</th>
+      <th>六</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php foreach($calMonth as $week){?>
+    <tr>
+      <?php foreach($week as $day){?>
+      <td  title=""
+      <?php if(!empty($day['note_num'])){?>
+        class="had_note"
+        onClick="showDailyNots(<?php echo $day['date'];?>)"
+      <?php }?>
+      >
+      <div>
+      <?php echo empty($day['date'])?"&nbsp;":$day['date'];?>
+        <span class="daily_note_num">
+         <?php echo empty($day['note_num'])?"&nbsp;":$day['note_num'];?>
+        </span>
+        </div>
+      </td>
+      <?php }?>
+    </tr>
+    <?php }?>
+  </tbody>
+</table>
+</div>
+<script type="text/javascript">
+  var YEAR=<?php echo $year;?>;
+  var MONTH=<?php echo $month;?>;
+</script>

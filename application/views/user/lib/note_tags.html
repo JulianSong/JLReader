@@ -1,0 +1,8 @@
+<meta charset="UTF-8">
+ <div id="note_tag">
+  <a class="tag" style=" background:#e3e7e9;">点击标签查看相应笔记</a>
+  <?php foreach($tags as $row){?>
+   <?php if(!empty($row)){?>
+   <a class="tag" href="javascript:showTagNots('<?php echo $row ;?>');"><?php echo $row ;?></a>
+  <?php }}?>
+  </div>

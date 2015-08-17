@@ -1,0 +1,20 @@
+<h3>搜索结果,共<?php echo $numb;?>个车系</h3>
+<div id="sliper" style="position:relative; overflow:hidden;">
+<div id="serach_series">
+<?php foreach($serachResult as $key=>$val){?>
+    
+     <p class="series_box" id="sb_<?php echo $key;?>"> 
+       <a target="_blank" href="<?php echo $base_url;?>series/info/<?php echo $val['cat_id'];?>.html">
+         <img class="spi"  width="100px" height="75px" src="<?php echo $base_url;?>images/series_img/<?php echo $val['series_img'];?>"></img>
+         <span class="series_name"><?php echo $val['cat_name'];?> <br/></span><b  class="articles_num" ><?php echo $val['articles_num'];?></b>篇文章
+       </a> 
+       </p>
+<?php }?>
+</div> 
+<div class="p" style="position:absolute; bottom:0px; left:50%">
+<img  onclick="$('#serach_series').slipLeft(200).printCount('#on_page');" id="" src="<?php echo $base_url;?>img/arrow_left_16x16.png"  />
+<span id="on_page">1</span>/<span id="page_conter"></span>
+<img  onclick="$('#serach_series').slipRight(200).printCount('#on_page');";" id="" src="<?php echo $base_url;?>img/arrow_right_16x16.png"  />
+</div>
+</div>
+<input id="data_num" value="<?php echo $numb;?>" type="hidden" />

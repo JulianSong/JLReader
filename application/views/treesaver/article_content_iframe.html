@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link type="text/css" media="all" href="<?php echo $base_url;?>css/reset.css" rel="stylesheet"/>
+<link type="text/css" media="all" href="<?php echo $base_url;?>css/user/style.css" rel="stylesheet"/>
+<link media="screen" rel="stylesheet" href="<?php echo $base_url;?>css/user/colorbox.css" />
+<title><?php echo $title;?></title>
+<style type="text/css">
+#content_loading{
+	position: absolute;
+	vertical-align: middle;
+	margin-top: 20%;
+	margin-left: 30%;
+	display: '';
+}
+</style>
+</head>
+
+<body style="overflow:hidden;">
+
+<?php $this->load->view('user/lib/page_header.html');?>
+<div id="content_loading" align="center">
+	<p>
+	<img style="padding-bottom:10px" src="<?php echo $this->config->item('base_url');?>img/loading.gif"/>
+	</p>
+	<h2>正在加载《<?php echo $article['Title'] ?>》......</h2>
+</div>
+<iframe  width="1024"  align="center" height="728" id="win" name="win" onload="SetWin()" frameborder="0" scrolling="no" src="<?php echo $base_url;?>reader/iframearticlecontent/<?php echo $aid;?>.html"></iframe>
+
+<script src="<?php echo $base_url;?>js/user/jquery.js" type="text/javascript"></script>
+<script src="<?php echo $this->config->item('base_url');?>js/user/jquery.colorbox-min.js" type="text/javascript"></script>  
+<script type="text/javascript">
+window.moveTo(0,0); 
+window.resizeTo(window.screen.availWidth,window.screen.availHeight);
+var BASE_URL="<?php echo $base_url;?>";
+$(document).ready(function(){
+    $("#topbar_login").colorbox();
+});
+
+/**
+ * 窗口大小变化的事件，触发iframe大小变化
+ */
+window.onresize=function(){
+	SetWin();
+}
+
+/**
+ * 调整iframe的大小
+ */
+function SetWin()
+{
+	var win=document.getElementById('win');
+	var hh=$(window).height()-35;
+	var ww=$(window).width();
+	win.style.height = hh+"px";
+	win.style.width = ww+"px";
+}
+
+
+/**
+ * 获取当前文章的ArticleID
+ */
+function getArticleID(){
+	var ifms=document.getElementById('win').contentWindow;
+	var iobj=ifms.document.getElementById('chromeContainer');
+	//var iobj=document.getElementById('chromeContainer');
+	var nowiobj=iobj.getElementsByTagName('div');
+	for(var i=0;i<nowiobj.length;i++){
+		if(nowiobj[i].className=="article template current"){
+			var aobj = nowiobj[i].getElementsByTagName('a');
+			var url = aobj[0].href;
+			var start=url.lastIndexOf("/")+1;
+			var stop=url.lastIndexOf(".");
+			var ArticleID=url.substring(start,stop);
+			//return ArticleID;
+			alert(ArticleID);
+		}
+	}
+}
+
+var myloading=setTimeout("loading()",10);
+function loading(){
+	clearTimeout(myloading);//计时停止
+	var ifms=document.getElementById('win').contentWindow;
+	var cc=ifms.document.getElementById('chromeContainer');
+	if(cc==null){
+		myloading=setTimeout("loading()",10);
+		document.getElementById("content_loading").style.display="";
+	}else{
+		document.getElementById("content_loading").style.display="none";
+	}
+}
+
+</script>
+<script src="<?php echo $this->config->item('base_url');?>js/user/common.js" type="text/javascript"></script>
+</body>
+</html>

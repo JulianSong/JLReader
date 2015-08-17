@@ -1,0 +1,272 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>测试推荐文章</title>
+</head>
+<body>
+<table border="1">
+<tr>
+	<th colspan="2">根据阅读的文章ID推荐其他用户读过的文章</th>
+</tr>
+<tr> 
+	<td>
+		<label>文章ID</label>
+	</td>
+	<td>
+		<input type="text" size="10" name="commend_ArticleID" id="commend_ArticleID" onkeyup="value=value.replace(/[^\d]/g,'');getCommendArticle();">
+		<input type="button" value="查询" onclick="getCommendArticle()" >
+	</td>
+</tr>
+<tr>
+	<th colspan="2">
+		<div id="first_commend">
+			<div id="commend">
+			</div>
+		</div>
+	</th>
+</tr>
+</table>
+
+<br>
+
+
+<table border="1">
+<tr>
+	<th colspan="2">根据文章ID查询记录</th>
+</tr>
+<tr> 
+	<td>
+		<label>文章ID</label>
+	</td>
+	<td>
+		<input type="text" size="10" name="log_ArticleID" id="log_ArticleID" onkeyup="value=value.replace(/[^\d]/g,'');getArticleLog();">
+		<input type="button" value="查询" onclick="getArticleLog()" >
+	</td>
+</tr>
+<tr> 
+	<td>
+		<label>文章标题</label>
+	</td>
+	<td>
+		<span id="log_title"></span>
+	</td>
+</tr>
+<tr> 
+	<td>
+		<label>总浏览次数</label>
+	</td>
+	<td>
+		<span id="log_history"></span>
+	</td>
+</tr>
+<tr> 
+	<td>
+		<label>总收藏次数</label>
+	</td>
+	<td>
+		<span id="log_favorite"></span>
+	</td>
+</tr>
+</table>
+
+<br>
+
+<table border="1">
+<tr>
+	<th colspan="3">收藏过的文章
+	<input type="button" value="更新" onclick="getFavorite()" >
+	</th>
+</tr>
+<tr> 
+	<th>
+		<label>文章ID</label>
+	</th>
+	<th>
+		<label>文章标题</label>
+	</th>
+	<th>
+		<label>收藏次数</label>
+	</th>
+</tr>
+<tbody id="favorite"></tbody>
+</table>
+<span id="favorite_time"></span>
+
+<br>
+<br>
+
+<table border="1">
+<tr>
+	<th colspan="3">阅读过的文章
+	<input type="button" value="更新" onclick="getHistory()" >
+	</th>
+</tr>
+<tr> 
+	<th>
+		<label>文章ID</label>
+	</th>
+	<th>
+		<label>文章标题</label>
+	</th>
+	<th>
+		<label>阅读次数</label>
+	</th>
+</tr>
+<tbody id="history"></tbody>
+</table>
+<span id="history_time"></span>
+
+<script src="<?php echo $base_url;?>js/user/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+var BASE_URL = "<?php echo $base_url;?>";
+/**
+ * 根据文章ID查询记录
+ */
+function getArticleLog(){
+	var ArticleID=document.getElementById("log_ArticleID").value;
+	if(ArticleID==""){
+		document.getElementById("log_title").innerHTML="";	
+    	document.getElementById("log_history").innerHTML="";	
+    	document.getElementById("log_favorite").innerHTML="";	
+		return;
+	}
+	$.post(BASE_URL+"recommendarticle/getarticlelog",
+	        {
+	          ArticleID:ArticleID
+	        },
+	        function(json){
+	        	if(json.length!=0){
+		        	document.getElementById("log_title").innerHTML="<a  target='_blank' title='"+json.Title+"' href='reader/articlecontent/"+ArticleID+".html'>"+json.Title+"</a>";	
+		        	document.getElementById("log_history").innerHTML=json.history_count;	
+		        	document.getElementById("log_favorite").innerHTML=json.favorite_count;
+	        	}else{
+	        		document.getElementById("log_title").innerHTML="";	
+	            	document.getElementById("log_history").innerHTML="";	
+	            	document.getElementById("log_favorite").innerHTML="";	
+		        }
+	        },
+	        'json'
+	  );
+}
+/**
+ * 根据阅读的文章ID推荐其他用户读过的文章
+ */
+function getCommendArticle(){
+	var ArticleID=document.getElementById("commend_ArticleID").value;
+	if(ArticleID==""){
+		var first_commend = document.getElementById("first_commend");
+		while(first_commend.hasChildNodes()) {
+			first_commend.removeChild(first_commend.lastChild);
+		}	
+		return;
+	}
+	
+	$.post(BASE_URL+"recommendarticle/getcommendarticle",
+	        {
+	          ArticleID:ArticleID
+	        },
+	        function(json){
+	        	var first_div=document.getElementById("first_commend");
+	        	while(first_div.hasChildNodes()) {
+	        		first_div.removeChild(first_div.lastChild);
+	    		}
+	        	var commendDiv=document.createElement("div"); 
+	        	commendDiv.id="commend";
+	        	first_div.appendChild(commendDiv);
+	        	var x;
+	        	for(x in json){
+		        	var contendDiv=document.createElement("div"); 
+		        	
+		        	var contendA=document.createElement("a"); 
+		        	contendA.innerHTML=json[x].Title;
+		        	contendA.href="reader/articlecontent/"+json[x].ArticleID+".html";
+		        	contendA.target="_blank";
+		        	contendDiv.appendChild(contendA);
+		        	commendDiv.appendChild(contendDiv);
+	        	}
+	        },
+	        'json'
+	  );
+}
+
+/**
+ * 获取当天阅读过的文章
+ */
+function getHistory(){
+	$.post(BASE_URL+"recommendarticle/gethistory",
+	        {
+	          
+	        },
+	        function(json){
+	        	var history=document.getElementById("history");
+	        	while(history.hasChildNodes()) {
+	        		history.removeChild(history.lastChild);
+	    		}
+	        	var x;
+	        	for(x in json){
+		     
+		        	var historyidTR=document.createElement("tr");
+		        	var historyidTD=document.createElement("td");
+		        	var historytitleTD=document.createElement("td");
+		        	var historycountTD=document.createElement("td");
+		        	historyidTD.innerHTML=json[x].ArticleID;
+		        	historytitleTD.innerHTML=json[x].Title;
+		        	historycountTD.innerHTML=json[x].history_count;
+
+		        	historyidTR.appendChild(historyidTD);
+		        	historyidTR.appendChild(historytitleTD);
+		        	historyidTR.appendChild(historycountTD);
+		        	history.appendChild(historyidTR);
+	        	}
+	        	var today=new Date()
+	        	var h=today.getHours()
+	        	var m=today.getMinutes()
+	        	var s=today.getSeconds()
+	        	document.getElementById("history_time").innerHTML="更新时间"+h+":"+m+":"+s;
+	        },
+	        'json'
+	  );
+}
+
+/**
+ * 获取收藏过的文章
+ */
+function getFavorite(){
+	$.post(BASE_URL+"recommendarticle/getfavorite",
+	        {
+	          
+	        },
+	        function(json){
+	        	var favorite=document.getElementById("favorite");
+	        	while(favorite.hasChildNodes()) {
+	        		favorite.removeChild(favorite.lastChild);
+	    		}
+	        	var x;
+	        	for(x in json){
+		     
+		        	var favoriteidTR=document.createElement("tr");
+		        	var favoriteidTD=document.createElement("td");
+		        	var favoritetitleTD=document.createElement("td");
+		        	var favoritecountTD=document.createElement("td");
+		        	favoriteidTD.innerHTML=json[x].ArticleID;
+		        	favoritetitleTD.innerHTML=json[x].Title;
+		        	favoritecountTD.innerHTML=json[x].favorite_count;
+
+		        	favoriteidTR.appendChild(favoriteidTD);
+		        	favoriteidTR.appendChild(favoritetitleTD);
+		        	favoriteidTR.appendChild(favoritecountTD);
+		        	favorite.appendChild(favoriteidTR);
+	        	}
+	        	var today=new Date()
+	        	var h=today.getHours()
+	        	var m=today.getMinutes()
+	        	var s=today.getSeconds()
+	        	document.getElementById("favorite_time").innerHTML="更新时间"+h+":"+m+":"+s;
+	        },
+	        'json'
+	  );
+}
+</script>
+</body>
+</html>

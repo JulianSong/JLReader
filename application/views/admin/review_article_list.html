@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<link media="screen" rel="stylesheet" href="<?php echo $base_url;?>css/user/colorbox.css" />
+<style type="text/css">
+body{
+	background:#e7ebff;
+	font-family: Microsoft Yahei;
+}
+</style>
+<body>
+<input id="key" class="key" type="text" size="25px" onclick="this.value=''" value="请输入名称或拼音查找车系">
+<input id="search" type="button" onclick="search()" value="搜索">
+<div id="series"></div>
+<div id="articles"></div>
+<script src="<?php echo $base_url;?>js/user/jquery.js" type="text/javascript"></script>
+<script src="<?php echo $base_url;?>js/user/jquery.colorbox-min.js" type="text/javascript"></script>
+<script type="text/javascript">
+var BASE_URL="<?php echo $base_url;?>";
+/**
+ * 搜索车系
+ * @return
+ */
+function search(){
+	var keyString=new String();
+	keyString=document.getElementById("key").value;
+	if(keyString.length==0){
+		alert("请输入搜索条件！");
+		document.getElementById("series").innerHTML="请输入搜索条件";
+		return;
+	}
+	$.post(BASE_URL + "admin/reviewarticle/search", {
+		key :keyString
+	}, function(result) {
+		document.getElementById("series").innerHTML = result;
+		document.getElementById("articles").style.display="none";
+		document.getElementById("series").style.display="";
+	}, 'text');
+}
+
+/**
+ * 根据车系id搜索文章
+ */
+function searcharticle(cat_id){
+	$.post(BASE_URL + "admin/reviewarticle/getArticles", {
+		cat_id :cat_id
+	}, function(result) {
+		document.getElementById("articles").innerHTML = result;
+		document.getElementById("articles").style.display="";
+		document.getElementById("series").style.display="none";
+	}, 'text');
+}
+
+/**
+ * 显示车系列表
+ */
+function showseries(){
+	document.getElementById("articles").style.display="none";
+	document.getElementById("series").style.display="";
+}
+
+function imgclick(cat_id,cat_name){
+	var r=confirm("确定要更换该车系图片吗？");
+	if(r==true){
+		uploadboxShow(cat_id,cat_name);
+	}
+}
+
+function uploadboxShow(cat_id){
+	$.colorbox({href:BASE_URL+"admin/reviewarticle/showUploadBox/"+cat_id});
+}
+
+function upload(cat_id){
+	$.post(BASE_URL + "admin/reviewarticle/do_upload", {
+		cat_id :cat_id,
+		field_name :document.getElementById("userfile").value
+	}, function(json) {
+		var result=json.result;
+		if(result==0){
+			alert("失败:"+json.error);
+		}else{
+			alert("成功");
+		}
+	}, 'json');
+}
+
+/*
+ * 处理键盘回车事件
+ */
+if (navigator.userAgent.indexOf("MSIE") > 0) {
+// IE
+	document.onkeydown = function() {
+		if (event.keyCode == 13) {
+			document.getElementById("search").click();
+		} 
+	}
+} else {
+	// 非IE
+	window.onkeydown = function(event) {
+		if (event.keyCode == 13) {
+			document.getElementById("search").click();
+		}
+	}
+}
+</script>
+</body>
+</html>

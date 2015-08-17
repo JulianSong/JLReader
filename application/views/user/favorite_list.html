@@ -1,0 +1,8 @@
+
+<?php if($result==2){?>
+	<?php foreach($favorite_list as $key=>$val){?>
+		<h4>
+			<a  href="<?php echo $base_url;?>reader/articlecontent/<?php echo $val['ArticleID'];?>.html"><?php echo $val['Title'];?></a>
+		</h4>
+	<?php }?>
+<?php }?>

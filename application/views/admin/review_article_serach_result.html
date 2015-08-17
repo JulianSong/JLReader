@@ -1,0 +1,55 @@
+<?php if($numb){?>
+<h4>搜索结果,共<?php echo $numb;?>篇导购文章</h4><a href="javascript:void(0);" onclick="showseries();">返回车系</a>
+<ul>
+	<?php foreach($articles as $key=>$val){?>
+		<li><a href="javascript:window.open('<?php echo $base_url;?>reader/articlecontent/<?php echo $val['ArticleID'];?>.html#','showarticle');
+		window.open('<?php echo $base_url;?>admin/reviewarticle/editarticlelist/<?php echo $val['ArticleID'];?>','editarticle');void(0);">
+		<?php echo $val['Title'];?></a>
+		</li>
+	<?php }?>
+</ul>
+<HR style="border:3 double #987cb9" width="100%" color=#987cb9 SIZE=3>
+<?php }?>
+
+<?php if($numb_2){?>
+<h4>搜索结果,共<?php echo $numb_2;?>篇试驾评测文章</h4><a href="javascript:void(0);" onclick="showseries();">返回车系</a>
+<ul>
+	<?php foreach($articles_2 as $key=>$val){?>
+		<li><a href="javascript:window.open('<?php echo $base_url;?>reader/articlecontent/<?php echo $val['ArticleID'];?>.html#','showarticle');
+		window.open('<?php echo $base_url;?>admin/reviewarticle/editarticlelist/<?php echo $val['ArticleID'];?>','editarticle');void(0);">
+		<?php echo $val['Title'];?></a>
+		</li>
+	<?php }?>
+</ul>
+<HR style="border:3 double #987cb9" width="100%" color=#987cb9 SIZE=3>
+<?php }?>
+
+<?php if($numb_3){?>
+<h4>搜索结果,共<?php echo $numb_3;?>篇车型详解文章</h4><a href="javascript:void(0);" onclick="showseries();">返回车系</a>
+<ul>
+	<?php foreach($articles_3 as $key=>$val){?>
+		<li><a href="javascript:window.open('<?php echo $base_url;?>reader/articlecontent/<?php echo $val['ArticleID'];?>.html#','showarticle');
+		window.open('<?php echo $base_url;?>admin/reviewarticle/editarticlelist/<?php echo $val['ArticleID'];?>','editarticle');void(0);">
+		<?php echo $val['Title'];?></a>
+		</li>
+	<?php }?>
+</ul>
+<HR style="border:3 double #987cb9" width="100%" color=#987cb9 SIZE=3>
+<?php }?>
+
+<?php if($numb_4){?>
+<h4>搜索结果,共<?php echo $numb_4;?>篇保养文章</h4><a href="javascript:void(0);" onclick="showseries();">返回车系</a>
+<ul>
+	<?php foreach($articles_4 as $key=>$val){?>
+		<li><a href="javascript:window.open('<?php echo $base_url;?>reader/articlecontent/<?php echo $val['ArticleID'];?>.html#','showarticle');
+		window.open('<?php echo $base_url;?>admin/reviewarticle/editarticlelist/<?php echo $val['ArticleID'];?>','editarticle');void(0);">
+		<?php echo $val['Title'];?></a>
+		</li>
+	<?php }?>
+</ul>
+<HR style="border:3 double #987cb9" width="100%" color=#987cb9 SIZE=3>
+<?php }?>
+
+<?php if($numb+$numb_2+$numb_3+$numb_4==0){?>
+<h4>搜索结果,共0篇文章</h4><a href="javascript:void(0);" onclick="showseries();">返回车系</a>
+<?php }?>

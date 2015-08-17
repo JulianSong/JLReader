@@ -1,0 +1,317 @@
+
+<!DOCTYPE html>
+<html>
+<!-- Built on 2011-04-22 14:38:12.365476 -->
+<head>
+</head>
+
+
+<body>
+	<div class="chrome no-small">
+		<div class="viewer"></div>
+		<div class="sidebar scroll">
+			<div data-bind="toc">
+				<div data-bind="article" class="article template">
+					<a data-bind="url:href" class="url"> <img data-bind="thumb:src"
+						class="thumb" height="40px" width="40px" /> <span
+						data-bind="title" class="title"> </span> <span
+						data-bind="description" class="deck"> </span> </a>
+				</div>
+			</div>
+		</div>
+		<!-- 
+        <button class="open-sidebar"  style="color:#fff;font-weight:bold;">目录</button>
+        <button class="close-sidebar" style="color:#fff;font-weight:bold;">关闭</button>
+        -->
+		<div class="scrolltop"></div>
+		<div class="scrollbottom"></div>
+		<div class="controll">
+			<div class="bottom left">
+				
+			</div>
+			<div class="bottom center">
+
+			</div>
+			<div class="bottom right">
+				<button class="next">
+					<img src="../../img/next.png" alt="&gt;" />
+				</button>
+				<button class="prev">
+					<img src="../../img/prev.png" alt="&lt;" />
+				</button>
+				<div class="numbering">
+					<span class="pagenumber" data-bind="pagenumber"> x </span> of <span
+						class="pagecount" data-bind="pagecount"> x </span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div class="chrome small">
+		<div class="viewer"></div>
+		<div class="sidebar scroll">
+			<div data-bind="toc">
+				<div data-bind="article" class="article template">
+					<a data-bind="url:href" class="url"> <img data-bind="thumb:src"
+						class="thumb" height="40px" width="40px" /> <span
+						data-bind="title" class="title"> </span> <span
+						data-bind="description" class="deck"> </span> </a>
+				</div>
+			</div>
+		</div>
+        <button class="open-sidebar"  style="color:#fff;font-weight:bold;">目录</button>
+        <button class="close-sidebar" style="color:#fff;font-weight:bold;">关闭</button>
+        <div class="scrolltop"></div>
+        <div class="scrollbottom"></div>
+		<div class="controll">
+			<button class="close-sidebar button">Hide Contents</button>
+			<div class="bottom left">
+<!--				<button class="menu">菜单</button>
+				<ul class="activemenu">
+					<li><a href="index.html"> 主页 </a>
+					</li>
+					<li><a href="#" class="open-sidebar"> </a>
+					</li>
+				</ul>-->
+			</div>
+			<div class="bottom right">
+				<button class="next">
+					<img src="../../img/next.png" alt="&gt;" />
+				</button>
+				<button class="prev">
+					<img src="../../img/prev.png" alt="&lt;" />
+				</button>
+				<button class="nextArticle">
+					<img src="../../img/next.png" alt="&gt;" /> <img
+						src="../../img/next.png" alt="&gt;" />
+				</button>
+				<button class="prevArticle">
+					<img src="../../img/prev.png" alt="&lt;" /> <img
+						src="../../img/prev.png" alt="&lt;" />
+				</button>
+			</div>
+		</div>
+	</div>
+	<div class="lightbox">
+		<div class="container"></div>
+	</div>
+
+
+
+
+	<!-- 3个 标题页 -->
+	<!-- 第一页 标题页 -->
+	<div class="grid w6col feature1 page-1 onprimary">
+		<div class="container col-1 title w6col overflow" data-sizes="title">
+		</div>
+		<div class="container col-1 img w6col center nocap"
+			data-sizes="opener"></div>
+	</div>
+	<div class="grid w9col feature1 page-1 onprimary">
+		<div class="container col-1 title w9col overflow" data-sizes="title">
+		</div>
+		<div class="container col-1 img w9col center nocap"
+			data-sizes="opener"></div>
+	</div>
+	
+	
+	
+	<!-- 第二页 -->
+	<div class="grid w3col feature1 no-page-1">
+	<!-- 去掉页脚
+		<div class="runningtitle">
+
+		</div> -->
+		<div class="container col-1 img w3col overflow"
+			data-sizes="single-16x9 single-4x3 single-1x1 single-3x4"></div>
+		<div class="column col-1"></div>
+	</div>
+	<div class="grid w6col feature1 no-page-1 ">
+	<!-- 去掉页脚
+		<div class="runningtitle">
+
+		</div> -->
+		<div class="container col-1 img w6col overflow"
+			data-sizes="double-16x9 double-4x3 double-1x1 double-3x4"></div>
+		<div class="column col-1"></div>
+		<div class="column col-4"></div>
+	</div>
+	
+	<!-- <div class="grid w9col feature1 page-2">
+		<div class="runningtitle">
+			<span> Nomad Editions </span> <span data-bind="vertical">
+				vertical </span>
+		</div>
+		data-sizes="triple-16x9 triple-4x3 triple-1x1 triple-3x4"></div>
+		<div class="container col-1 img w9col overflow"
+			data-sizes="double-16x9 double-4x3 double-1x1 double-3x4"></div>
+		<div class="column col-1"></div>
+		<div class="column col-4"></div>
+		<div class="column col-7"></div>
+	</div>
+	<div class="grid w12col feature1 page-2">
+		<div class="runningtitle">
+			<span> Nomad Editions </span> <span data-bind="vertical">
+				vertical </span>
+		</div>
+		<div class="container col-1 img w12col overflow"
+			data-sizes="quad-16x9 quad-4x3 quad-1x1 quad-3x4"></div>
+		<div class="column col-1"></div>
+		<div class="column col-4"></div>
+		<div class="column col-7"></div>
+		<div class="column col-10"></div>
+	</div> -->
+
+
+	<!-- 4个不同显示大小的奇数页 -->
+	<div class="grid w3col feature1 no-page-1 no-page-2">
+	<!-- 去掉页脚
+		<div class="runningtitle">
+		</div> -->
+		<div class="column col-1 bottom"></div>
+	</div>
+	<div class="grid w6col feature1 no-page-1 no-page-2">
+	<!-- 去掉页脚
+		<div class="runningtitle">
+		</div> -->
+		<div>
+			<div class="container col-1 w3col pullquote bottom"
+				data-sizes="pullquote"></div>
+			<div class="column col-1"></div>
+		</div>
+		<div>
+			<div class="container col-4 w3col img"
+				data-sizes="single-16x9 single-3x4 single-1x1 single-4x3"></div>
+			<div class="column col-4 bottom"></div>
+		</div>
+	</div>
+	<div class="grid w9col feature1 odd no-page-1 no-page-2">
+	<!-- 去掉页脚
+		<div class="runningtitle">
+		</div> -->
+
+		<div>
+			<div class="container col-1 w6col img"
+				data-sizes="double-16x9 double-3x4 double-1x1 double-4x3"></div>
+			<div class="column col-1 bottom"></div>
+			<div class="column col-4 bottom"></div>
+		</div>
+
+		<div>
+			<div class="container col-7 w3col pullquote bottom"
+				data-sizes="pullquote"></div>
+			<div class="column col-7"></div>
+		</div>
+	</div>
+
+	<div class="grid w9col feature1 no-page-1 no-page-2">
+	<!-- 去掉页脚
+		<div class="runningtitle">
+		</div> -->
+		<div>
+			<div class="container col-1 w3col pullquote bottom"
+				data-sizes="pullquote"></div>
+			<div class="column col-1"></div>
+		</div>
+		
+		<div>
+			<div class="container col-4 w6col img"
+				data-sizes="double-16x9 double-3x4 double-1x1 double-4x3"></div>
+			<div class="column col-4 bottom"></div>
+			<div class="column col-7 bottom"></div>
+		</div>
+	</div>
+
+
+	<!--奇数页 
+  <div class="grid w12col feature1 odd no-page-1">
+   <div class="runningtitle"> 
+    <span> 
+     Nomad Editions
+    </span> 
+    <span data-bind="vertical"> 
+     vertical
+    </span> 
+   </div> 
+   <div> 
+    <div class="container col-1 w3col pullquote bottom" data-sizes="pullquote"> 
+    </div> 
+    <div class="column col-1"> 
+    </div> 
+   </div> 
+   <div class="column col-4"> 
+   </div> 
+   <div> 
+    <div class="container col-7 w6col img" data-sizes="double-16x9 double-3x4 double-1x1 double-4x3"> 
+    </div> 
+    <div class="column col-7 bottom"> 
+    </div> 
+    <div class="column col-10 bottom"> 
+    </div> 
+   </div> 
+  </div> 
+ -->
+	<!-- 3个不同显示大小的偶数页 -->
+	<div class="grid w3col feature1 no-page-1 no-page-2">
+	<!-- 去掉页脚
+		<div class="runningtitle">
+		</div> -->
+		<div class="container col-1 img bottom"
+			data-sizes="single-16x9 single-3x4 single-1x1 single-4x3"></div>
+		<div class="column col-1"></div>
+	</div>
+	<div class="grid w6col feature1 no-page-1 no-page-2">
+		<!-- 偶数页 -->
+		<!-- 去掉页脚
+		<div class="runningtitle">
+		</div> -->
+		<div>
+			
+			<div class="column col-1"></div>
+			<div class="column col-4"></div>
+			
+			<div class="container col-1 w6col img bottom"
+				data-sizes="double-16x9 double-3x4 double-1x1 double-4x3"></div>
+		</div>
+	</div>
+	<div class="grid w9col feature1 even no-page-1 no-page-2">
+	<!-- 去掉页脚
+		<div class="runningtitle">
+		</div> -->
+		<div>
+
+
+			<div class="column col-1"></div>
+			<div class="container col-4 w9col img bottom"
+				data-sizes="double-16x9 double-3x4 double-1x1 double-4x3"></div>
+			<div class="column col-4"></div>
+			<div class="column col-7"></div>
+		</div>
+	</div>
+	<div class="grid w12col feature1 even no-page-1 no-page-2">
+	<!-- 去掉页脚
+		<div class="runningtitle">
+<!--			<span> Nomad Editions </span> <span data-bind="vertical">
+				vertical </span>-->
+		</div> -->
+		<div>
+			<div class="container col-1 w6col img"
+				data-sizes="double-16x9 double-3x4 double-1x1 double-4x3"></div>
+			<div class="column col-1"></div>
+			<div class="column col-4"></div>
+			
+		
+		</div>
+		
+		<div>
+			<div class="container col-7 w6col img"
+				data-sizes="double-16x9 double-3x4 double-1x1 double-4x3"></div>
+			<div class="column col-7 bottom"></div>
+			<div class="column col-10 bottom"></div>
+		</div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>收藏测试页</title>
+</head>
+<body>
+<h1>收藏测试</h1>
+<p>1、添加和删除收藏</p>
+<table>
+<tr>
+	<td>uid：</td>
+	<td>
+		<input type="text" name="uid" id="uid" onkeyup="value=value.replace(/[^\d]/g,'')">
+	</td>
+</tr>
+<tr>
+	<td>ArticleID：</td>
+	<td>
+		<input type="text" name="ArticleID" id="ArticleID" onkeyup="value=value.replace(/[^\d]/g,'')">
+	</td>
+</tr>
+<tr>
+	<td></td>
+	<td>
+		<input type="button" name="addfavorite" id="addfavorite" value="添加收藏" onclick="addfavorite_click()" >
+		<input type="button" name="delfavorite" id="delfavorite" value="移除收藏" onclick="delfavorite_click()" >
+	</td>
+</tr>
+</table>
+<p>2、获取收藏列表</p>
+<table>
+<tr>
+	<td>uid：</td>
+	<td>
+		<input type="text" name="uid2" id="uid2" onkeyup="value=value.replace(/[^\d]/g,'')">
+	</td>
+</tr>
+<tr>
+	<td>limit：</td>
+	<td>
+		<input type="text" name="limit" id="limit" onkeyup="value=value.replace(/[^\d]/g,'')">
+	</td>
+</tr>
+<tr>
+	<td></td>
+	<td>
+		<input type="button" name="getfavorite" id="addfavorite" value="获取收藏" onclick="getfavorite_click()" >
+	</td>
+</tr>
+</table>
+<table>
+<tbody id="t1">
+</tbody>
+</table>
+</body>
+<script src="<?php echo $this->config->item('base_url');?>js/user/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+function addfavorite_click(){
+	var uid = document.getElementById("uid").value;
+	var ArticleID = document.getElementById("ArticleID").value;
+	if(check_addFavorite()){
+		addFavorite(uid,ArticleID);
+	}
+}
+function delfavorite_click(){
+	var uid = document.getElementById("uid").value;
+	var ArticleID = document.getElementById("ArticleID").value;
+	if(check_addFavorite()){
+		delFavorite(uid,ArticleID);
+	}
+}
+function getfavorite_click(){
+	var uid = document.getElementById("uid2").value;
+	var limit = document.getElementById("limit").value;
+	if(check_getFavorite()){
+		getAllFavorite(uid,limit);
+	}
+}
+
+function check_addFavorite(){
+	var uid = document.getElementById("uid").value;
+	var ArticleID = document.getElementById("ArticleID").value;
+	if(uid==''){
+		alert("请填写uid");
+		return false;
+	}
+	if(ArticleID==''){
+		alert("请填写ArticleID");
+		return false;
+	}
+	return true;
+}
+function check_getFavorite(){
+	var uid = document.getElementById("uid2").value;
+	if(uid==''){
+		alert("请填写获取收藏列表中的uid");
+		return false;
+	}
+	return true;
+}
+/**
+ * 添加收藏
+ */
+function addFavorite(uid,ArticleID){
+	$.post("<?php echo $this->config->item('base_url');?>favorite/addfavorite",
+	        {
+				uid:uid,
+				ArticleID:ArticleID
+	        },
+	        function(json){
+		        var result=json.result;
+		        if(result==0){
+					alert("收藏成功");
+					getfavorite_click();
+			    }else if(result==1){
+					alert("已经收藏，不能重复收藏");
+				}else{
+					alert("操作失败");
+				}
+	        },
+	        'json'
+	  );
+}
+/**
+ * 移除收藏
+ */
+function delFavorite(uid,ArticleID){
+	$.post("<?php echo $this->config->item('base_url');?>favorite/delfavorite",
+	        {
+				uid:uid,
+				ArticleID:ArticleID
+	        },
+	        function(json){
+		        var result=json.result;
+		        if(result==0){
+					alert("移除失败，没有该收藏记录");
+			    }else if(result==1){
+					alert("移除成功");
+					getfavorite_click();
+				}else{
+					alert("操作失败");
+				}
+	        },
+	        'json'
+	  );
+}
+/**
+ * 获取收藏列表
+ */
+function getAllFavorite(uid,limit){
+	$.post("<?php echo $this->config->item('base_url');?>favorite/getallfavorite",
+	        {
+				uid:uid,
+				limit:limit
+	        },
+	        function(json){
+		        var result=json.result;
+		        if(result==1){
+					alert("该用户没有收藏记录");
+					showFavoriteList(data);
+			    }else if(result==0){
+					var data=json.data;
+					showFavoriteList(data);
+				}else{
+					alert("操作失败");
+				}
+	        },
+	        'json'
+	  );
+}
+/**
+ * 显示列表
+ */
+function showFavoriteList(data){
+	var t1=document.getElementById("t1");
+	while(row=t1.lastChild){
+       t1.removeChild(row);
+    }
+	for(one in data){
+		var tr=document.createElement("tr");
+		var td_title=document.createElement("td");
+		var td_time=document.createElement("td");
+		td_title.innerHTML=data[one].Title;
+		td_time.innerHTML=data[one].add_time;
+
+		var a_del=document.createElement("a");
+		a_del.innerHTML="删除";
+		a_del.style.padding="3px";
+		a_del.href="javascript:delFavorite("+data[one].uid+","+data[one].ArticleID+")";
+		
+		tr.appendChild(td_title);
+		tr.appendChild(td_time);
+		tr.appendChild(a_del);
+		t1.appendChild(tr);
+	}
+
+}
+</script>
+</html>

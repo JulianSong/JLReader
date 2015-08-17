@@ -1,0 +1,423 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" media="all" href="<?php echo $this->config->item('base_url');?>css/reset.css" rel="stylesheet"/>
+<title>添加模板</title>
+<style>
+body {
+	background:#E9E9E9;
+	padding:20px 100px;
+	font-family:"微软雅黑";
+}
+table {
+	border-spacing: 0;
+}
+thead th, tbody td {
+	border-bottom: 1px solid #C9C9C9;
+	border-top: 1px solid #F9F9F9;
+	text-align:left;
+	vertical-align:middle;
+}
+.view_content {
+	position:relative;
+}
+.view {
+	width:400px;
+	height:300px;
+	position: relative;
+	background:#FFFFFF;
+}
+.grid {
+	width:400px;
+	height:300px;
+	position: absolute;
+	z-index:2;
+}
+.block {
+	font-size: 14px;
+	line-height:18px;
+	border-bottom:2px solid #990000;
+	border-right:2px solid #990000;
+	border:1px solid #990000;
+	border-collapse: collapse;
+	border-spacing: 0px;
+	position: absolute;
+	z-index:3;
+}
+.tp_info {
+	position:absolute;
+	background:#000;
+	color:#FFF;
+	z-index:1000;
+	font-size:12px;
+	height:36px;
+	line-height:18px;
+	top:-37px;
+}
+.origin {
+	position:absolute;
+	top:0px;
+	left:0px;
+	color:#990000;
+}
+.end {
+	position:absolute;
+	right:0px;
+	bottom:0px;
+	color:#990000;
+}
+.grid table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.grid td {
+	border: dotted 1px #CCC;
+	padding:0px;
+	line-height:100%;
+	vertical-align: baseline;
+}
+.coordinate_axes {
+	position:relative;
+	height:100%;
+	width:100%;
+	margin:0px;
+	padding:0px;
+}
+.axes {
+	position:absolute;
+	left:-14px;
+	top:-14px;
+	font-size:12px;
+	color:#990000;
+	display:block;
+	height:12px;
+	width:12px;
+}
+.x {
+	top:-16px;
+	left:-6px;
+}
+.y {
+	top:-6px;
+	left:-16px;
+}
+.index {
+	position:absolute;
+	top:40%;
+	left:40%;
+	font-size:16px;
+	color:#990000;
+	font-weight:bold;
+}
+.plate_principle {
+	float: left;
+	width:500px;
+	margin-right:40px;
+}
+h3 {
+	margin:20px;
+}
+.comment {
+	font-size:12px;
+	font-style:italic;
+	color:#0C9;
+	padding-left:10px;
+}
+p {
+	text-indent:28px;
+	margin:0 10px;
+	font-size:14px;
+	line-height:20px;
+}
+.plate{
+	width:400px;
+	height:300px;
+	overflow:hidden;
+}
+#tepinfo{
+	width:71px;
+	height:140px;
+	font-size:14px;
+	line-height:20px;
+	overflow-y:hidden;
+    resize: none;
+	padding:0px;
+}
+</style>
+</head>
+
+<body>
+<h3>模板实现原理</h3>
+<div>
+<div  class="view" style="float:left">
+  <div class="grid">
+    <table cellpadding="0" cellspacing="0" height="100%" width="100%">
+      <tbody>
+        <tr>
+          <td><div class="coordinate_axes"> <span class="axes "> 0 </span> <span class="axes x"> </span> <span class="axes y"> </span> </div></td>
+          <td><div class="coordinate_axes"> <span class="axes "> </span> <span class="axes x"> 1 </span> <span class="axes y"> </span> </div></td>
+          <td><div class="coordinate_axes"> <span class="axes "> </span> <span class="axes x"> 2 </span> <span class="axes y"> </span> </div></td>
+          <td><div class="coordinate_axes"> <span class="axes "> </span> <span class="axes x"> 3 </span> <span class="axes y"> </span> </div></td>
+          <td><div class="coordinate_axes"> <span class="axes "> </span> <span class="axes x"> 4 </span> <span class="axes y"> </span> </div></td>
+          <td><div class="coordinate_axes"> <span class="axes "> </span> <span class="axes x"> 5 </span> <span class="axes y"> </span> </div></td>
+          <td><div class="coordinate_axes"> <span class="axes "> </span> <span class="axes x"> 6 </span> <span class="axes y"> </span> </div></td>
+          <td><div class="coordinate_axes"> <span class="axes "> </span> <span class="axes x"> 7 </span> <span class="axes y"> </span> </div></td>
+        </tr>
+        <tr>
+          <td><div class="coordinate_axes"> <span class="axes "> </span> <span class="axes x"> </span> <span class="axes y"> 1 </span> </div></td>
+          <td><div class="coordinate_axes"> <span class="axes "> </span> <span class="axes x"> </span> <span class="axes y"> </span> </div></td>
+          <td><div class="coordinate_axes"> <span class="axes "> </span> <span class="axes x"> </span> <span class="axes y"> </span> </div></td>
+          <td><div class="coordinate_axes"> <span class="axes "> </span> <span class="axes x"> </span> <span class="axes y"> </span> </div></td>
+          <td><div class="coordinate_axes"> <span class="axes "> </span> <span class="axes x"> </span> <span class="axes y"> </span> </div></td>
+          <td><div class="coordinate_axes"> <span class="axes "> </span> <span class="axes x"> </span> <span class="axes y"> </span> </div></td>
+          <td><div class="coordinate_axes"> <span class="axes "> </span> <span class="axes x"> </span> <span class="axes y"> </span> </div></td>
+          <td><div class="coordinate_axes"> <span class="axes "> </span> <span class="axes x"> </span> <span class="axes y"> </span> </div></td>
+        </tr>
+        <tr>
+          <td><div class="coordinate_axes"> <span class="axes "> </span> <span class="axes x"> </span> <span class="axes y"> 2 </span> </div></td>
+          <td><div class="coordinate_axes"> <span class="axes "> </span> <span class="axes x"> </span> <span class="axes y"> </span> </div></td>
+          <td><div class="coordinate_axes"> <span class="axes "> </span> <span class="axes x"> </span> <span class="axes y"> </span> </div></td>
+          <td><div class="coordinate_axes"> <span class="axes "> </span> <span class="axes x"> </span> <span class="axes y"> </span> </div></td>
+          <td><div class="coordinate_axes"> <span class="axes "> </span> <span class="axes x"> </span> <span class="axes y"> </span> </div></td>
+          <td><div class="coordinate_axes"> <span class="axes "> </span> <span class="axes x"> </span> <span class="axes y"> </span> </div></td>
+          <td><div class="coordinate_axes"> <span class="axes "> </span> <span class="axes x"> </span> <span class="axes y"> </span> </div></td>
+          <td><div class="coordinate_axes"> <span class="axes "> </span> <span class="axes x"> </span> <span class="axes y"> </span> </div></td>
+        </tr>
+        <tr>
+          <td><div class="coordinate_axes"> <span class="axes "> </span> <span class="axes x"> </span> <span class="axes y"> 3 </span> </div></td>
+          <td><div class="coordinate_axes"> <span class="axes "> </span> <span class="axes x"> </span> <span class="axes y"> </span> </div></td>
+          <td><div class="coordinate_axes"> <span class="axes "> </span> <span class="axes x"> </span> <span class="axes y"> </span> </div></td>
+          <td><div class="coordinate_axes"> <span class="axes "> </span> <span class="axes x"> </span> <span class="axes y"> </span> </div></td>
+          <td><div class="coordinate_axes"> <span class="axes "> </span> <span class="axes x"> </span> <span class="axes y"> </span> </div></td>
+          <td><div class="coordinate_axes"> <span class="axes "> </span> <span class="axes x"> </span> <span class="axes y"> </span> </div></td>
+          <td><div class="coordinate_axes"> <span class="axes "> </span> <span class="axes x"> </span> <span class="axes y"> </span> </div></td>
+          <td><div class="coordinate_axes"> <span class="axes "> </span> <span class="axes x"> </span> <span class="axes y"> </span> </div></td>
+        </tr>
+        <tr>
+          <td><div class="coordinate_axes"> <span class="axes "> </span> <span class="axes x"> </span> <span class="axes y"> 4 </span> </div></td>
+          <td><div class="coordinate_axes"> <span class="axes "> </span> <span class="axes x"> </span> <span class="axes y"> </span> </div></td>
+          <td><div class="coordinate_axes"> <span class="axes "> </span> <span class="axes x"> </span> <span class="axes y"> </span> </div></td>
+          <td><div class="coordinate_axes"> <span class="axes "> </span> <span class="axes x"> </span> <span class="axes y"> </span> </div></td>
+          <td><div class="coordinate_axes"> <span class="axes "> </span> <span class="axes x"> </span> <span class="axes y"> </span> </div></td>
+          <td><div class="coordinate_axes"> <span class="axes "> </span> <span class="axes x"> </span> <span class="axes y"> </span> </div></td>
+          <td><div class="coordinate_axes"> <span class="axes "> </span> <span class="axes x"> </span> <span class="axes y"> </span> </div></td>
+          <td><div class="coordinate_axes"> <span class="axes "> </span> <span class="axes x"> </span> <span class="axes y"> </span> </div></td>
+        </tr>
+        <tr>
+          <td><div class="coordinate_axes"> <span class="axes "> </span> <span class="axes x"> </span> <span class="axes y"> 5 </span> </div></td>
+          <td><div class="coordinate_axes"> <span class="axes "> </span> <span class="axes x"> </span> <span class="axes y"> </span> </div></td>
+          <td><div class="coordinate_axes"> <span class="axes "> </span> <span class="axes x"> </span> <span class="axes y"> </span> </div></td>
+          <td><div class="coordinate_axes"> <span class="axes "> </span> <span class="axes x"> </span> <span class="axes y"> </span> </div></td>
+          <td><div class="coordinate_axes"> <span class="axes "> </span> <span class="axes x"> </span> <span class="axes y"> </span> </div></td>
+          <td><div class="coordinate_axes"> <span class="axes "> </span> <span class="axes x"> </span> <span class="axes y"> </span> </div></td>
+          <td><div class="coordinate_axes"> <span class="axes "> </span> <span class="axes x"> </span> <span class="axes y"> </span> </div></td>
+          <td><div class="coordinate_axes"> <span class="axes "> </span> <span class="axes x"> </span> <span class="axes y"> </span> </div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="block" style="left:0px;top:0px;width:150px;height:100px;        background:;"> <span class="origin"> (0,0) </span> <span class="end"> (3,2) </span> <span class="index"> 1 </span> </div>
+  <div class="block" style="left:0px;top:100px;width:150px;height:200px;        background:;"> <span class="origin"> (0,2) </span> <span class="end"> (3,6) </span> <span class="index"> 2 </span> </div>
+  <div class="block" style="left:150px;top:0px;width:100px;height:150px;        background:;"> <span class="origin"> (3,0) </span> <span class="end"> (5,3) </span> <span class="index"> 3 </span> </div>
+  <div class="block" style="left:150px;top:150px;width:100px;height:150px;        background:;"> <span class="origin"> (3,3) </span> <span class="end"> (5,6) </span> <span class="index"> 4 </span> </div>
+  <div class="block" style="left:250px;top:0px;width:150px;height:150px;        background:;"> <span class="origin"> (5,0) </span> <span class="end"> (8,3) </span> <span class="index"> 5 </span> </div>
+  <div class="block" style="left:250px;top:150px;width:150px;height:150px;        background:;"> <span class="origin"> (5,3) </span> <span class="end"> (8,6) </span> <span class="index"> 6 </span> </div>
+</div>
+<div class="plate_principle" style="float:left;">
+  <p>如右图所示，模板是由矩阵上的若干区块组成的。矩阵可以表示为坐标系，而区块又可在坐标系上由起始坐标和结束坐标进行标示。根据这个原理模板信息可以被表示为类似于“23,6,8,6,0,0,3,2,0,2,3,6,3,0,5,3,3,3,5,6,5,0,8,3,5,3,8,6”这样的字符串。字符串中每4位表示一区块或信息。这个信息被程序拆解识别后便可以显示成相应的模板。该字符串的拆解结果如下所示 </p>
+  <p>23,6,8,6<span class="comment"> //前四位依次为模板id23，模板区块总数6，x轴分割数8，y轴分割数6</span></p>
+  <p>(0,0),(3,2)<span class="comment">//区块1</span></p>
+  <p>(0,2),(3,6)<span class="comment">//区块2</span></p>
+  <p>(3,0),(5,3)<span class="comment">//区块3</span></p>
+  <p>(3,3),(5,6)<span class="comment">//区块4</span></p>
+  <p>(5,0),(8,3)<span class="comment">//区块5</span></p>
+  <p>(5,3),(8,6)<span class="comment">//区块6</span></p>
+</div>
+<div  style="clear:both"></div>
+<div>
+<h3>添加新模板</h3>
+<div>
+  <div class="view" style="margin:20px 0px; float:left;" id="plateId">
+    <div class="grid" id="new_grid"> </div>
+    <div class="plate" id="plate"> </div>
+  </div>
+  <form style="margin:20px; float:left;" >
+    区块数量:
+    <select id="ba">
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6" selected="selected">6</option>
+      <option value="7">7</option>
+    </select>
+    X轴分割数:
+    <input maxlength="2" size="2" type="text" id="x" name="x" value="8" onblur="grid()"/>
+    Y轴分割数:
+    <input maxlength="2" size="2" type="text" id="y" name="y" value="6" onblur="grid()"/>
+    <br />
+    模板字符串:
+    <textarea id="tepinfo">0,0,3,2,0,2,3,6,3,0,5,3,3,3,5,6,5,0,8,3,5,3,8,6
+    </textarea>
+    <input type="button" value="生成模板"  onclick="view()" />
+    <input type="button" value="保存"  onclick="addPlate()" />
+  </form>
+  <div  style="clear:both"></div>
+</div>
+</body>
+<script src="<?php echo $this->config->item('base_url');?>js/user/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+var BASE_URL="<?php echo $this->config->item('base_url');?>";
+var w=400;
+var h=300;
+function grid(){
+	var gridTable=document.getElementById("grid_table");
+	var x=document.getElementById('x');
+	var y=document.getElementById('y');
+	var grid=document.getElementById('new_grid');
+	grid.innerHTML="";
+	createGrid(x.value,y.value,grid);
+}
+function createGrid(x,y,grid){
+	if(x<0||y<0||grid==null){
+		return false;
+	}
+	var table=document.createElement("table");
+	table.id="grid_table"
+	table.setAttribute("height","100%");
+	table.setAttribute("width","100%");
+	table.cellPadding=0;
+	table.cellSpacing=0;
+	var tbody=document.createElement("tbody");
+	for(r=0;r<y;r++){
+    	var row=tbody.insertRow(r);
+		for(c=0;c<x;c++){
+      		var cell=row.insertCell(c);
+
+			if(r==0&&c==0){
+				var div=document.createElement("div");
+				div.className="coordinate_axes";
+				var span=document.createElement("span");
+            	span.className="axes";
+				span.innerHTML=c;
+				div.appendChild(span);
+				cell.appendChild(div);
+			}else if(r==0&&c!=0){
+				var div=document.createElement("div");
+				div.className="coordinate_axes";
+				var span=document.createElement("span");
+				span.className="axes x";
+				span.innerHTML=c;
+				div.appendChild(span);
+				cell.appendChild(div);
+			}else if(c==0&&r!=0){
+				var div=document.createElement("div");
+				div.className="coordinate_axes";
+				var span=document.createElement("span");
+				span.className="axes y";
+				span.innerHTML=r;
+				div.appendChild(span);
+				cell.appendChild(div);
+			}else{
+				var div=document.createElement("div");
+				div.className="coordinate_axes";
+				var span=document.createElement("span");
+				span.className="axes x";
+				span.innerHTML="&nbsp;&nbsp;";
+				div.appendChild(span);
+				cell.appendChild(div);
+			}
+			
+		}
+	}
+	table.appendChild(tbody);
+	grid.appendChild(table);
+}
+function view(){
+	grid();
+	var ba=document.getElementById("ba");
+	var tepinfo=document.getElementById('tepinfo');
+	var plate=document.getElementById("plate");
+	plate.innerHTML='';
+	var x=document.getElementById('x');
+	var y=document.getElementById('y');
+	createBlock(tepinfo.value,plate,x.value,y.value,ba.value);
+}
+function createBlock(tepInfoStr,plate,measurementX,measurementY,blockAmount){
+	var template=parsingTemplate(tepInfoStr,measurementX,measurementY);
+	for(i=0;i<template.length;i++){
+	   var b=document.createElement("div");
+	   b.className="block";
+	   b.style.left=template[i]['left']+"px";
+	   b.style.top=template[i]['top']+"px";
+	   b.style.width=template[i]['width']+"px";
+	   b.style.height=template[i]['height']+"px";
+       var origin=document.createElement("span");
+	   origin.innerHTML="("+template[i]['x1']+","+template[i]['y1']+")";
+	   origin.className="origin";
+	   var end=document.createElement("span");
+	   end.innerHTML="("+template[i]['x2']+","+template[i]['y2']+")";
+	   end.className="end";
+	   var index=document.createElement("span");
+	   index.className="index";
+	   index.innerHTML=i+1;
+	   b.appendChild(origin);
+	   b.appendChild(end);
+	   b.appendChild(index);
+	   plate.appendChild(b);
+	}
+}
+function parsingTemplate(tepInfoStr,measurementX,measurementY){
+		var templateDate=tepInfoStr.split(",");
+		// 获得每列的宽度
+		var clumWidth = Math.round(w/measurementX);
+		var rowHeight = Math.round(h/measurementY);
+		// 解析出模板每块的位置和大小
+		var length = templateDate.length;
+		if((length%4)!=0){
+			alert('模板信息不正确！');
+			return false;
+		}
+		var template = new Array();
+		for(i = 0; i < length;i+=4) {
+		   if(!(templateDate[i]&&templateDate[i + 1]&&templateDate[i + 2]&&templateDate[i + 3])){
+			  alert('模板信息不正确!');
+			  return false;
+		   }
+			// 获得每个区块的矩阵坐标
+			var block = new Array();
+			block["x1"] = templateDate[i];
+			block["y1"] = templateDate[i + 1];
+			block["x2"] = templateDate[i + 2];
+			block["y2"] = templateDate[i + 3];
+			// 获得区块在父容器中相对位置和大小
+			block["left"] = block["x1"] * clumWidth;
+			block["top"]  = block["y1"] * rowHeight;
+			block["width"]  = (block["x2"] - block["x1"]) * clumWidth;
+			block["height"] = (block["y2"] - block["y1"]) * rowHeight;
+			template.push(block);
+		}
+		return template;
+}
+function addPlate(){
+	var ba=document.getElementById("ba");
+	var x=document.getElementById('x');
+	var y=document.getElementById('y');
+	var tepinfo=document.getElementById('tepinfo');
+	var val=ba.value+","+x.value+","+y.value+","+tepinfo.value;
+	var template=parsingTemplate(tepinfo.value,x.value,y.value);
+	if(ba!=template.length){
+		alert("区块数量与实际不符！");
+		return false;
+	}
+	$.post(BASE_URL + "template/add", {
+		     ba:ba.value,
+			 tinfo:val
+	      },function(text){
+		  },
+		  'text'
+	);
+}
+</script>
+</html>
